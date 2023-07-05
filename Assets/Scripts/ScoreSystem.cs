@@ -7,15 +7,19 @@ using UnityEngine.SceneManagement;
 public class ScoreSystem : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-    public static int score; 
 
-    private void Awake()
+    private GameManager gameManager;
+
+    private void Start()
     {
-        score = 0; 
+        gameManager = GameManager.instance;
+
+        gameManager.Score = 0; 
     }
+
     private void Update()
     {
-        scoreText.text = score.ToString();
+        scoreText.text = gameManager.Score.ToString();
     }
 
     public void RestartButton()

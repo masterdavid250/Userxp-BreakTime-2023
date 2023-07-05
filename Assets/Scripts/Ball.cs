@@ -1,0 +1,51 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Ball : MonoBehaviour
+{
+    [SerializeField] private Transform paddle;
+    [SerializeField] private float speed = 10f;
+
+    public new Rigidbody2D RB { get; private set; }
+
+    private bool isAttached;
+
+    private void Awake()
+    {
+        RB = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        isAttached = true;
+    }
+
+    private void Update()
+    {
+        if (isAttached)
+        {
+            Vector2 target = new Vector2(paddle.position.x, transform.position.y);
+
+            transform.position = target;
+
+            if (Input.GetKey(KeyCode.E))
+            {
+                Launch();
+            }
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        RB.velocity = RB.velocity.normalized * speed;
+    }
+
+    private void Launch()
+    {
+        Vector2 force = Vector2.up;
+        RB.AddForce(force.normalized * speed);
+
+        isAttached = false;
+    }
+}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TitleScreen : MonoBehaviour
+public class TitleScreenUI : MonoBehaviour
 {
     public void ButtonNewGame()
     {

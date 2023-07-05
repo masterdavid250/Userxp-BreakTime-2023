@@ -213,8 +213,7 @@ Transform:
   m_LocalPosition: {x: 6.9949, y: 1.31, z: 0}
   m_LocalScale: {x: 3.3513534, y: 0.94663984, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 998714031}
+  m_Children: []
   m_Father: {fileID: 1812495745}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -336,7 +335,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &107036794 stripped
 Transform:
@@ -367,7 +366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132095954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09, y: -0.33, z: -0.20893498}
+  m_LocalPosition: {x: 0.09, y: -0.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -409,10 +408,6 @@ PrefabInstance:
     - target: {fileID: 1457873552503372105, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
       propertyPath: m_Name
       value: Toblerone (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1457873552503372107, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1457873552503372110, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
       propertyPath: m_RootOrder
@@ -609,7 +604,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &281586346
 GameObject:
@@ -623,6 +618,7 @@ GameObject:
   - component: {fileID: 281586347}
   - component: {fileID: 281586349}
   - component: {fileID: 281586351}
+  - component: {fileID: 281586352}
   m_Layer: 0
   m_Name: PaddleRight
   m_TagString: Untagged
@@ -690,7 +686,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281586346}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 5.14, y: 0.33, z: 0.20893498}
+  m_LocalPosition: {x: 4.75, y: 0.3, z: 0.20893498}
   m_LocalScale: {x: 2.4999998, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -744,6 +740,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!114 &281586352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281586346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca4eb6a24e956e14687ba606cbcacd6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &290460580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -754,10 +762,6 @@ PrefabInstance:
     - target: {fileID: 1457873552503372105, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
       propertyPath: m_Name
       value: Toblerone (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1457873552503372107, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1457873552503372110, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
       propertyPath: m_RootOrder
@@ -822,6 +826,7 @@ GameObject:
   - component: {fileID: 391774033}
   - component: {fileID: 391774035}
   - component: {fileID: 391774036}
+  - component: {fileID: 391774037}
   m_Layer: 0
   m_Name: Paddle1
   m_TagString: Untagged
@@ -889,7 +894,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391774032}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.7825961, y: -4.02, z: 0.20893498}
+  m_LocalPosition: {x: -2, y: -4, z: 0.20893498}
   m_LocalScale: {x: 2.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -909,7 +914,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.21022654}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -920,7 +925,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.4095469}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &391774036
 Rigidbody2D:
@@ -943,6 +948,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!114 &391774037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391774032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca4eb6a24e956e14687ba606cbcacd6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &421245502
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,10 +991,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1489393452}
   - {fileID: 2088730535}
   - {fileID: 846675832}
-  m_Father: {fileID: 1438353888}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1016,7 +1034,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1630,7 +1648,7 @@ GameObject:
   - component: {fileID: 846675834}
   - component: {fileID: 846675833}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ResetButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1649,12 +1667,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 421245503}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -26.169708, y: -168.5853}
-  m_SizeDelta: {x: 37.2923, y: 34.1841}
+  m_AnchoredPosition: {x: -60, y: -445}
+  m_SizeDelta: {x: 85, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &846675833
 MonoBehaviour:
@@ -1828,10 +1846,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Toblerone (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 1457873552503372107, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1457873552503372110, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -1940,107 +1954,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4f9655f4c980de459424b72e5609098, type: 3}
---- !u!1 &998714030
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 998714031}
-  - component: {fileID: 998714034}
-  - component: {fileID: 998714033}
-  - component: {fileID: 998714032}
-  m_Layer: 5
-  m_Name: Canvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &998714031
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998714030}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1489393452}
-  m_Father: {fileID: 75519288}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &998714032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998714030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &998714033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998714030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
---- !u!223 &998714034
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998714030}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!1001 &1002929637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2712,12 +2625,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333858819}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7445, y: -0.0222, z: 0}
+  m_LocalPosition: {x: -1.75, y: 0, z: 0}
   m_LocalScale: {x: 13.614067, y: 8.977708, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1431927693
 GameObject:
@@ -2744,7 +2657,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431927693}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.37740397, y: -0.034999218, z: -0.20893498}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2798,8 +2711,7 @@ Transform:
   m_LocalPosition: {x: 6.5172005, y: -4.11, z: 0}
   m_LocalScale: {x: 2.5302556, y: 0.7768502, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 421245503}
+  m_Children: []
   m_Father: {fileID: 1515807757}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2929,7 +2841,7 @@ GameObject:
   - component: {fileID: 1489393454}
   - component: {fileID: 1489393453}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SnacksText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2942,18 +2854,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489393451}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.62041235, y: 0.62041235, z: 0.62041235}
+  m_LocalScale: {x: 0.6204123, y: 0.62041247, z: 0.6204124}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 998714031}
+  m_Father: {fileID: 421245503}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -89, y: 73.8}
-  m_SizeDelta: {x: 226.4961, y: 56.6006}
+  m_AnchoredPosition: {x: -200, y: 145}
+  m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1489393453
 MonoBehaviour:
@@ -3002,8 +2914,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3250,7 +3162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736769051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.02, y: -0.82, z: 0}
+  m_LocalPosition: {x: -2, y: -3.5, z: 0}
   m_LocalScale: {x: 0.34593, y: 0.34593, z: 0.34593}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3306,7 +3218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5afdf7c83440e1244a8fdc6c7e68651c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
+  paddle: {fileID: 391774034}
+  speed: 10
 --- !u!1 &1781409142
 GameObject:
   m_ObjectHideFlags: 0
@@ -3319,6 +3232,7 @@ GameObject:
   - component: {fileID: 1781409143}
   - component: {fileID: 1781409145}
   - component: {fileID: 1781409147}
+  - component: {fileID: 1781409148}
   m_Layer: 0
   m_Name: PaddleLeft
   m_TagString: Untagged
@@ -3386,7 +3300,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781409142}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -7.85, y: 0.33, z: 0.20893498}
+  m_LocalPosition: {x: -8.25, y: 0.3, z: 0.20893498}
   m_LocalScale: {x: 2.4999998, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3440,6 +3354,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!114 &1781409148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781409142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca4eb6a24e956e14687ba606cbcacd6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1809739184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3450,10 +3376,6 @@ PrefabInstance:
     - target: {fileID: 1457873552503372105, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
       propertyPath: m_Name
       value: Toblerone (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1457873552503372107, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1457873552503372110, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
       propertyPath: m_RootOrder
@@ -3570,10 +3492,6 @@ PrefabInstance:
     - target: {fileID: 1457873552503372105, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
       propertyPath: m_Name
       value: Toblerone
-      objectReference: {fileID: 0}
-    - target: {fileID: 1457873552503372107, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1457873552503372110, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
       propertyPath: m_RootOrder
@@ -3708,7 +3626,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014985360}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.37, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3746,11 +3664,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 421245503}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -106, y: -169.3}
+  m_AnchoredPosition: {x: -255, y: -440}
   m_SizeDelta: {x: 101.7489, y: 40.7595}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2088730536
@@ -3800,8 +3718,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
