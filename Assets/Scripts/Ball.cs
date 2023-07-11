@@ -18,7 +18,7 @@ public class Ball : MonoBehaviour
 
     private void Start()
     {
-        isAttached = true;
+        ResetBall();
     }
 
     private void Update()
@@ -47,5 +47,13 @@ public class Ball : MonoBehaviour
         RB.AddForce(force.normalized * speed);
 
         isAttached = false;
+    }
+
+    public void ResetBall()
+    {
+        this.transform.position = new Vector2(-2f, -3.5f);
+        this.RB.velocity = Vector2.zero;
+
+        isAttached = true;
     }
 }

@@ -5,11 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class Borders : MonoBehaviour
 {
+    private GameManager gameManager;
+
+    private void Start()
+    {
+        gameManager = GameManager.instance;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("ball"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            gameManager.Miss();
         }
     }
 }

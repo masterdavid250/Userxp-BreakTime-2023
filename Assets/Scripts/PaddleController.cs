@@ -47,12 +47,15 @@ public class PaddleController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        // Keeping this code just in case we want to revert to old controls
+        /*if (Input.GetKey(KeyCode.Space))
             paddleNumber++;
 
         if (paddleNumber > 1)
             paddleNumber = 0;
+        */
 
+        // Horizontal paddle
         if (Input.GetKey(KeyCode.A))
             rbM.velocity = Vector2.left * 10;
         else if (Input.GetKey(KeyCode.D))
@@ -60,7 +63,7 @@ public class PaddleController : MonoBehaviour
         else
             rbM.velocity = Vector2.zero;
 
-        if (paddleNumber == 0)
+        /*if (paddleNumber == 0)
         {
             if (Input.GetKey(KeyCode.W))
                 rbL.velocity = Vector2.up * 10;
@@ -77,6 +80,25 @@ public class PaddleController : MonoBehaviour
                 rbR.velocity = Vector2.down * 10;
             else
                 rbR.velocity = Vector2.zero;
+        }*/
+
+        // Vertical paddles (they move together)
+        if (Input.GetKey(KeyCode.W))
+        {
+            rbL.velocity = Vector2.up * 10;
+            rbR.velocity = Vector2.up * 10;
+        }
+        
+        else if (Input.GetKey(KeyCode.S))
+        {
+            rbL.velocity = Vector2.down * 10;
+            rbR.velocity = Vector2.down * 10;
+        }
+        
+        else
+        {
+            rbL.velocity = Vector2.zero;
+            rbR.velocity = Vector2.zero;
         }
     }
 
@@ -98,5 +120,12 @@ public class PaddleController : MonoBehaviour
                 return;
             rbR.AddForce(direction * speed * 900000);
         }
+    }
+
+    public void ResetPaddle()
+    {
+        rbL.velocity = Vector2.zero;
+        rbM.velocity = Vector2.zero;
+        rbR.velocity = Vector2.zero;
     }
 }
