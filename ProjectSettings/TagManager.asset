@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ball
   - Snacks
+  - bonusSnack
   layers:
   - Default
   - TransparentFX

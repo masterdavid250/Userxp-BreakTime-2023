@@ -10,6 +10,7 @@ public class BonusSnack : MonoBehaviour
     public Transform snackPosition;
     private int snackNumber;
     private bool bonusSpawned = false;
+    public string snackName;
 
     private void Awake()
     {
@@ -21,31 +22,36 @@ public class BonusSnack : MonoBehaviour
         if (snackNumber == 0 && !bonusSpawned)
         {
             Instantiate(snacks[0], snackPosition.position, snackPosition.rotation);
-            bonusSnackText.text = "Sakuchoo";
+            snackName = "Sakuchoo";
+            bonusSnackText.text = snackName;
             bonusSpawned = true;
         }
         if (snackNumber == 1 && !bonusSpawned)
         {
             Instantiate(snacks[1], snackPosition.position, snackPosition.rotation);
-            bonusSnackText.text = "Sakuratcha";
+            snackName = "Sakuratcha";
+            bonusSnackText.text = snackName;
             bonusSpawned = true;
         }
         if (snackNumber == 2 && !bonusSpawned)
         {
             Instantiate(snacks[2], snackPosition.position, snackPosition.rotation);
-            bonusSnackText.text = "SakuSticks";
+            snackName = "SakuSticks";
+            bonusSnackText.text = snackName;
             bonusSpawned = true;
         }
         if (snackNumber == 3 && !bonusSpawned)
         {
             Instantiate(snacks[3], snackPosition.position, snackPosition.rotation);
-            bonusSnackText.text = "SakuSugar";
+            snackName = "SakuSugar";
+            bonusSnackText.text = snackName;
             bonusSpawned = true;
         }
         if (snackNumber == 4 && !bonusSpawned)
         {
             Instantiate(snacks[4], snackPosition.position, snackPosition.rotation);
-            bonusSnackText.text = "Sakuron";
+            snackName = "Sakuron";
+            bonusSnackText.text = snackName;
             bonusSpawned = true;
         }
     }

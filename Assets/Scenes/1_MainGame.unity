@@ -3905,6 +3905,7 @@ MonoBehaviour:
   - {fileID: 1457873552503372105, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
   bonusSnackText: {fileID: 1489393453}
   snackPosition: {fileID: 498628519}
+  snackName: 
 --- !u!1001 &1849399531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4321,6 +4322,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Candy7
       objectReference: {fileID: 0}
+    - target: {fileID: 397156984987387612, guid: 2e6b7e70c0f471a4fb5337050bb57312, type: 3}
+      propertyPath: bonusSnack
+      value: 
+      objectReference: {fileID: 1812495744}
     - target: {fileID: 6004653529131139570, guid: 2e6b7e70c0f471a4fb5337050bb57312, type: 3}
       propertyPath: m_RootOrder
       value: 0

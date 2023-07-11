@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
+    [SerializeField] private string name;
     [SerializeField] private int health;
     [SerializeField] private int points;
+    
+    private BonusSnack bonusSnack;
 
     private GameManager gameManager;
 
     private void Start()
     {
         gameManager = GameManager.instance;
+        bonusSnack = FindObjectOfType<BonusSnack>();
     }
 
     private void Update()
@@ -19,6 +23,9 @@ public class Brick : MonoBehaviour
         if (health <= 0)
         {
             gameManager.Score += points;
+
+            if (name == bonusSnack.snackName)
+            gameManager.AddLife();
 
             // Might change this so that the snack falls before being destroyed
             Destroy(gameObject);
