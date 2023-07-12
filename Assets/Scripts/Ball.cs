@@ -29,7 +29,7 @@ public class Ball : MonoBehaviour
 
             transform.position = target;
 
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.Space))
             {
                 Launch();
             }
