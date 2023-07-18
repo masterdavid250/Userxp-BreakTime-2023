@@ -31,8 +31,12 @@ public class Paddle : MonoBehaviour
             Vector2 paddlePosition = transform.position;
             Vector2 contactPoint = collision.GetContact(0).point;
             Vector2 direction = Vector2.up;
+
             float offset = 0f;
             float maxOffset = 0f;
+            float currentAngle = 0f;
+            float bounceAngle = 0f;
+            float newAngle = 0f;
 
             if (thisPaddleType == PaddleType.main)
             {
@@ -40,22 +44,28 @@ public class Paddle : MonoBehaviour
                 offset = paddlePosition.x - contactPoint.x;
                 maxOffset = collision.otherCollider.bounds.size.x / 2;
             }
+
             if (thisPaddleType == PaddleType.right)
             {
                 direction = Vector2.left;
                 offset = paddlePosition.y - contactPoint.y;
                 maxOffset = collision.otherCollider.bounds.size.y / 2;
             }
+
+            currentAngle = Vector2.SignedAngle(direction, ball.RB.velocity);
+            bounceAngle = (offset / maxOffset) * maxBounceAngle;
+            newAngle = Mathf.Clamp(currentAngle + bounceAngle, -maxBounceAngle, maxBounceAngle);
+
             if (thisPaddleType == PaddleType.left)
             {
                 direction = Vector2.right;
                 offset = paddlePosition.y - contactPoint.y;
                 maxOffset = collision.otherCollider.bounds.size.y / 2;
-            }
 
-            float currentAngle = Vector2.SignedAngle(direction, ball.RB.velocity);
-            float bounceAngle = (offset / maxOffset) * maxBounceAngle;
-            float newAngle = Mathf.Clamp(currentAngle + bounceAngle, -maxBounceAngle, maxBounceAngle);
+                currentAngle = Vector2.SignedAngle(direction, ball.RB.velocity);
+                bounceAngle = (offset / maxOffset) * maxBounceAngle;
+                newAngle = Mathf.Clamp(currentAngle - bounceAngle, -maxBounceAngle, maxBounceAngle);
+            }
 
             Quaternion rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
             ball.RB.velocity = rotation * direction * ball.RB.velocity.magnitude;
