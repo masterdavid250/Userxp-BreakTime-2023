@@ -8,7 +8,7 @@ public class PaddleController : MonoBehaviour
     public GameObject       paddleLeft;
     public GameObject       paddleRight;
     public float            speed = 100f;
-    private int           paddleNumber = 0;
+    private int             paddleNumber = 0;
     private Rigidbody2D     rbM;
     private Rigidbody2D     rbL;
     private Rigidbody2D     rbR;

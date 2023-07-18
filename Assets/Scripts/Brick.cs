@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
+    public Ball ball; 
     [SerializeField] private string name;
     [SerializeField] private int health;
     [SerializeField] private int points;
     
     private BonusSnack bonusSnack;
-
     private GameManager gameManager;
 
     private void Start()
@@ -35,6 +35,6 @@ public class Brick : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("ball"))
-            health--;
+            health -= ball.ballDamage;
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+    public int ballDamage = 1; 
     [SerializeField] private Transform paddle;
     [SerializeField] private float speed = 10f;
 
@@ -23,6 +24,9 @@ public class Ball : MonoBehaviour
 
     private void Update()
     {
+        if (ballDamage <= 0)
+            ballDamage = 1; 
+
         if (isAttached)
         {
             Vector2 target = new Vector2(paddle.position.x, transform.position.y);

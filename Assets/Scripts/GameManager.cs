@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     public PaddleController paddle { get; private set; }
     public int Lives {get; set; }
     private int lives;
-
     public int Score { get; set; }
 
     private int score;

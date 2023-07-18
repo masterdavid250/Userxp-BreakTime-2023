@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1457873552503372106}
   m_Layer: 0
   m_Name: Toblerone
-  m_TagString: Untagged
+  m_TagString: Snacks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b07db969cd15b4985ee89486d58a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ballDamage: 1
   name: Sakuron
   health: 1
   points: 1
-  bonusSnack: {fileID: 0}
