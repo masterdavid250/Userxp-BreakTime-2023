@@ -12,6 +12,11 @@ public class Powerups : MonoBehaviour
     private bool                    isBiggerPaddlesActivated = false;
     private bool                    isCurrencyChangeActivated = false;
 
+    void Start()
+    {
+        gameManager = GameManager.instance;
+    }
+
     public void BiggerPaddlePowerup()
     {
         if (gameManager.Lives > 0 && !isBiggerPaddlesActivated)
@@ -24,7 +29,7 @@ public class Powerups : MonoBehaviour
             for (int i = 0; i < paddleSides.Length; i++)
             {
                 Vector3 currentScale2 = paddleSides[i].transform.localScale;
-                currentScale2.y *= scaleXMultiplier;
+                currentScale2.x *= scaleXMultiplier;
                 paddleSides[i].transform.transform.localScale = currentScale2;
             }
             Invoke(nameof(ReturnPaddlesToNormal), 10);
@@ -38,8 +43,10 @@ public class Powerups : MonoBehaviour
             gameManager.Lives--;
             isCurrencyChangeActivated = true;
             ball.ballDamage++;
+            ball.spriteRenderer.sprite = ball.ballSprites[1];
+            ball.UpdateColliderSize();
             //CHANGE THE DURATION
-            Invoke(nameof(ReturnPaddlesToNormal), 10);
+            Invoke(nameof(ReturnCurrencyToNormal), 10);
         }
     }
 
@@ -56,15 +63,17 @@ public class Powerups : MonoBehaviour
         for (int i = 0; i < paddleSides.Length; i++)
         {
             Vector3 currentScale2 = paddleSides[i].transform.localScale;
-            currentScale2.y /= scaleXMultiplier;
+            currentScale2.x /= scaleXMultiplier;
             paddleSides[i].transform.transform.localScale = currentScale2;
         }
         isBiggerPaddlesActivated = false;
     }
 
-    private void ReturnCurrencyToNormal()
+    private void ReturnCurrencyToNormal() 
     {
         ball.ballDamage--;
         isCurrencyChangeActivated = false;
+        ball.spriteRenderer.sprite = ball.ballSprites[0];
+        ball.UpdateColliderSize();
     }
 }

@@ -5,7 +5,6 @@ using TMPro;
 
 public class Lives : MonoBehaviour
 {
-    public int lives;
     public TMP_Text coinsText;
     private GameManager gameManager;
 

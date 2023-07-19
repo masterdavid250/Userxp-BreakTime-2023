@@ -57,11 +57,19 @@ public class PaddleController : MonoBehaviour
 
         // Horizontal paddle
         if (Input.GetKey(KeyCode.A))
+        {
             rbM.velocity = Vector2.left * 10;
+        }
+
         else if (Input.GetKey(KeyCode.D))
+        {
             rbM.velocity = Vector2.right * 10; 
+        }
+
         else
+        {
             rbM.velocity = Vector2.zero;
+        }
 
         /*if (paddleNumber == 0)
         {
