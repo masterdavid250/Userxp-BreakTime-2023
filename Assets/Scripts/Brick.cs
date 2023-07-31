@@ -5,7 +5,7 @@ using UnityEngine;
 public class Brick : MonoBehaviour
 {
     public Ball ball; 
-    [SerializeField] private string name;
+    [SerializeField] private string snackName;
     [SerializeField] private int health;
     [SerializeField] private int points;
     
@@ -24,7 +24,7 @@ public class Brick : MonoBehaviour
         {
             gameManager.Score += points;
 
-            if (name == bonusSnack.snackName)
+            if (snackName == bonusSnack.snackName)
             gameManager.AddLife();
 
             // Might change this so that the snack falls before being destroyed

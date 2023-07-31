@@ -11,7 +11,7 @@ public enum PaddleType
 // Code is from: https://www.youtube.com/watch?v=RYG8UExRkhA
 public class Paddle : MonoBehaviour
 {
-    public new Rigidbody2D RB { get; private set; }
+    public Rigidbody2D RB { get; private set; }
 
     private float maxBounceAngle = 80f;
 

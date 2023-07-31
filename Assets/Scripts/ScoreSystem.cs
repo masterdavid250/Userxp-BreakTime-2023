@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 public class ScoreSystem : MonoBehaviour
 {
     public TextMeshProUGUI  scoreText;
-    public GameObject[]     allSnacks;
-    public GameObject       snackStack;
+    public GameObject[]     snackStack;
     public Transform        snackStackSpawnLocation;
     private GameManager     gameManager;
+    private GameObject[]    allSnacks;
 
     private void Start()
     {
@@ -21,7 +21,7 @@ public class ScoreSystem : MonoBehaviour
     private void Update()
     {
         allSnacks = GameObject.FindGameObjectsWithTag("Snacks");
-        if (allSnacks == null)
+        if (allSnacks.Length <= 1)
             RespawnSnacks(); 
         scoreText.text = gameManager.Score.ToString();
     }
@@ -33,7 +33,7 @@ public class ScoreSystem : MonoBehaviour
 
     public void RespawnSnacks()
     {
-        GameObject newStack = Instantiate(snackStack, snackStackSpawnLocation.position, snackStackSpawnLocation.rotation);
+        GameObject newStack = Instantiate(snackStack[Random.Range(0, snackStack.Length)], snackStackSpawnLocation.position, snackStackSpawnLocation.rotation);
         newStack.SetActive(true); 
     }
 }

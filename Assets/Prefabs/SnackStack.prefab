@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2531148307733205209
 Transform:
   m_ObjectHideFlags: 0
@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 1457873552503372106, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 1457873552503372110, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -136,7 +136,7 @@ PrefabInstance:
     - target: {fileID: 5512404359155238519, guid: f4f9655f4c980de459424b72e5609098, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 7761444469798138576, guid: f4f9655f4c980de459424b72e5609098, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -202,7 +202,7 @@ PrefabInstance:
     - target: {fileID: 397156984987387612, guid: 2e6b7e70c0f471a4fb5337050bb57312, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 6004653529131139570, guid: 2e6b7e70c0f471a4fb5337050bb57312, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -268,7 +268,7 @@ PrefabInstance:
     - target: {fileID: 397156984987387612, guid: 2e6b7e70c0f471a4fb5337050bb57312, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 6004653529131139570, guid: 2e6b7e70c0f471a4fb5337050bb57312, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -330,7 +330,7 @@ PrefabInstance:
     - target: {fileID: 3388984900062197570, guid: f2d5635b89a74ac499f60de6d66e7ba4, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 6376690954637508877, guid: f2d5635b89a74ac499f60de6d66e7ba4, type: 3}
       propertyPath: m_Name
       value: Candy5 (1)
@@ -400,7 +400,7 @@ PrefabInstance:
     - target: {fileID: 5512404359155238519, guid: f4f9655f4c980de459424b72e5609098, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 7761444469798138576, guid: f4f9655f4c980de459424b72e5609098, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -466,7 +466,7 @@ PrefabInstance:
     - target: {fileID: 1457873552503372106, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 1457873552503372110, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -528,7 +528,7 @@ PrefabInstance:
     - target: {fileID: 1837426532818618523, guid: d2076c09843236640930b3439d9ab583, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 7149896545232704744, guid: d2076c09843236640930b3439d9ab583, type: 3}
       propertyPath: m_Name
       value: Candy8 (3)
@@ -594,7 +594,7 @@ PrefabInstance:
     - target: {fileID: 1837426532818618523, guid: d2076c09843236640930b3439d9ab583, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 7149896545232704744, guid: d2076c09843236640930b3439d9ab583, type: 3}
       propertyPath: m_Name
       value: Candy8 (2)
@@ -664,7 +664,7 @@ PrefabInstance:
     - target: {fileID: 1457873552503372106, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 1457873552503372110, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -726,7 +726,7 @@ PrefabInstance:
     - target: {fileID: 3388984900062197570, guid: f2d5635b89a74ac499f60de6d66e7ba4, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 6376690954637508877, guid: f2d5635b89a74ac499f60de6d66e7ba4, type: 3}
       propertyPath: m_Name
       value: Candy5
@@ -796,7 +796,7 @@ PrefabInstance:
     - target: {fileID: 5512404359155238519, guid: f4f9655f4c980de459424b72e5609098, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 7761444469798138576, guid: f4f9655f4c980de459424b72e5609098, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -862,7 +862,7 @@ PrefabInstance:
     - target: {fileID: 397156984987387612, guid: 2e6b7e70c0f471a4fb5337050bb57312, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 6004653529131139570, guid: 2e6b7e70c0f471a4fb5337050bb57312, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -924,7 +924,7 @@ PrefabInstance:
     - target: {fileID: 3388984900062197570, guid: f2d5635b89a74ac499f60de6d66e7ba4, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 6376690954637508877, guid: f2d5635b89a74ac499f60de6d66e7ba4, type: 3}
       propertyPath: m_Name
       value: Candy5 (3)
@@ -994,7 +994,7 @@ PrefabInstance:
     - target: {fileID: 5512404359155238519, guid: f4f9655f4c980de459424b72e5609098, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 7761444469798138576, guid: f4f9655f4c980de459424b72e5609098, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1060,7 +1060,7 @@ PrefabInstance:
     - target: {fileID: 397156984987387612, guid: 2e6b7e70c0f471a4fb5337050bb57312, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 397156984987387612, guid: 2e6b7e70c0f471a4fb5337050bb57312, type: 3}
       propertyPath: bonusSnack
       value: 
@@ -1126,7 +1126,7 @@ PrefabInstance:
     - target: {fileID: 1837426532818618523, guid: d2076c09843236640930b3439d9ab583, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 7149896545232704744, guid: d2076c09843236640930b3439d9ab583, type: 3}
       propertyPath: m_Name
       value: Candy8 (1)
@@ -1192,7 +1192,7 @@ PrefabInstance:
     - target: {fileID: 3388984900062197570, guid: f2d5635b89a74ac499f60de6d66e7ba4, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 6376690954637508877, guid: f2d5635b89a74ac499f60de6d66e7ba4, type: 3}
       propertyPath: m_Name
       value: Candy5 (2)
@@ -1262,7 +1262,7 @@ PrefabInstance:
     - target: {fileID: 5512404359155238519, guid: f4f9655f4c980de459424b72e5609098, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 7761444469798138576, guid: f4f9655f4c980de459424b72e5609098, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -1328,7 +1328,7 @@ PrefabInstance:
     - target: {fileID: 1457873552503372106, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 1457873552503372110, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -1394,7 +1394,7 @@ PrefabInstance:
     - target: {fileID: 1457873552503372106, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 1457873552503372110, guid: ecb5a51cb53b6a543af7868b0cad2d61, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -1456,7 +1456,7 @@ PrefabInstance:
     - target: {fileID: 3388984900062197570, guid: f2d5635b89a74ac499f60de6d66e7ba4, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 6376690954637508877, guid: f2d5635b89a74ac499f60de6d66e7ba4, type: 3}
       propertyPath: m_Name
       value: Candy5 (5)
@@ -1526,7 +1526,7 @@ PrefabInstance:
     - target: {fileID: 5512404359155238519, guid: f4f9655f4c980de459424b72e5609098, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 7761444469798138576, guid: f4f9655f4c980de459424b72e5609098, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1588,7 +1588,7 @@ PrefabInstance:
     - target: {fileID: 1837426532818618523, guid: d2076c09843236640930b3439d9ab583, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 7149896545232704744, guid: d2076c09843236640930b3439d9ab583, type: 3}
       propertyPath: m_Name
       value: Candy8
@@ -1654,7 +1654,7 @@ PrefabInstance:
     - target: {fileID: 3388984900062197570, guid: f2d5635b89a74ac499f60de6d66e7ba4, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
     - target: {fileID: 6376690954637508877, guid: f2d5635b89a74ac499f60de6d66e7ba4, type: 3}
       propertyPath: m_Name
       value: Candy5 (4)
