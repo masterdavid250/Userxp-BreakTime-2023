@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour
     public Sprite[] ballSprites;
     [SerializeField] private Transform paddle;
     [SerializeField] private float speed = 10f;
+    [SerializeField] private Powerups powerups;
 
     public Rigidbody2D RB { get; private set; }
 
@@ -66,10 +67,25 @@ public class Ball : MonoBehaviour
         isAttached = true;
     }
 
+    // for sticky paddle implementation
+    public void StopAtCurrentPosition()
+    {
+        this.RB.velocity = Vector2.zero;
+        isAttached = true;
+    }
+
     // Code Source: https://forum.unity.com/threads/change-the-circlecollider2d-radius-according-the-sprite.427629/
     public void UpdateColliderSize()
     {
         Vector3 spriteHalfSize = spriteRenderer.sprite.bounds.extents;
         circleCollider.radius = spriteHalfSize.x > spriteHalfSize.y ? spriteHalfSize.x : spriteHalfSize.y;
     } 
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (powerups.isStickyPaddlesActivated && collision.gameObject.name == "Paddle1" && !isAttached)
+        {
+            StopAtCurrentPosition();
+        }
+    }
 }

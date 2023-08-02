@@ -9,12 +9,16 @@ public class Powerups : MonoBehaviour
     public GameManager              gameManager;
     public Ball                     ball; 
     [SerializeField] private float  scaleXMultiplier = 2f;
+    [SerializeField] private Sprite[] paddleSprites;
+    private SpriteRenderer          paddleMainSpriteRenderer;
     private bool                    isBiggerPaddlesActivated = false;
     private bool                    isCurrencyChangeActivated = false;
+    public bool                     isStickyPaddlesActivated = false;
 
     void Start()
     {
         gameManager = GameManager.instance;
+        paddleMainSpriteRenderer = paddleMain.GetComponent<SpriteRenderer>();
     }
 
     public void BiggerPaddlePowerup()
@@ -52,7 +56,14 @@ public class Powerups : MonoBehaviour
 
     public void StickyPaddle()
     {
-        //Dunno the StickyPaddle
+        if (gameManager.Lives > 0 && !isStickyPaddlesActivated)
+        {
+            // Other part of code for this is in the ball script
+            gameManager.Lives--;
+            isStickyPaddlesActivated = true;
+            paddleMainSpriteRenderer.sprite = paddleSprites[1];
+            Invoke(nameof(ReturnStickyPaddleToNormal), 10);
+        }
     }
 
     private void ReturnPaddlesToNormal()
@@ -75,5 +86,11 @@ public class Powerups : MonoBehaviour
         isCurrencyChangeActivated = false;
         ball.spriteRenderer.sprite = ball.ballSprites[0];
         ball.UpdateColliderSize();
+    }
+
+    private void ReturnStickyPaddleToNormal() 
+    {
+        paddleMainSpriteRenderer.sprite = paddleSprites[0];
+        isStickyPaddlesActivated = false;
     }
 }

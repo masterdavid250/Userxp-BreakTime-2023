@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     public void Miss()
     {
-        if (Lives > 0)
+        if (Lives >= 0)
         {
             Lives--;
             this.ball.ResetBall();

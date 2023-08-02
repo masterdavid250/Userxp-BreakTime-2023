@@ -16,6 +16,6 @@ public class Lives : MonoBehaviour
 
     void Update()
     {
-        coinsText.text = gameManager.Lives.ToString();
+        coinsText.text = Mathf.Clamp(gameManager.Lives, 0, gameManager.Lives).ToString();
     }
 }

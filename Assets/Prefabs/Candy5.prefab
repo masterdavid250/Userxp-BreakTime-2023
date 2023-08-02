@@ -147,6 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 16484059722629555, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
-  name: Sakuratcha
+  snackName: Sakuratcha
   health: 2
   points: 5
