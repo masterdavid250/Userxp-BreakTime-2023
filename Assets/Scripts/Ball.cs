@@ -61,7 +61,7 @@ public class Ball : MonoBehaviour
 
     public void ResetBall()
     {
-        this.transform.position = new Vector2(-2f, -3.5f);
+        this.transform.position = new Vector2(-2f, -3.4f);
         this.RB.velocity = Vector2.zero;
 
         isAttached = true;
@@ -85,7 +85,20 @@ public class Ball : MonoBehaviour
     {
         if (powerups.isStickyPaddlesActivated && collision.gameObject.name == "Paddle1" && !isAttached)
         {
+            FindObjectOfType<AudioManager>().Play("Coin (sticky)");
             StopAtCurrentPosition();
+        }
+        else if (collision.gameObject.tag == "Paddle")
+        {
+            FindObjectOfType<AudioManager>().Play("Coin (paddle)");
+        }
+        else if (collision.gameObject.tag == "Wall")
+        {
+            FindObjectOfType<AudioManager>().Play("Coin (wall)");
+        }
+        else if (collision.gameObject.tag == "Snacks")
+        {
+            FindObjectOfType<AudioManager>().Play("Coin (snack)");
         }
     }
 }

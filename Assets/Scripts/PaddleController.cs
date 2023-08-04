@@ -38,6 +38,12 @@ public class PaddleController : MonoBehaviour
         IsPressingKey = Input.GetKey(KeyCode.A);
     }*/
 
+    private void Awake()
+    {
+        FindObjectOfType<AudioManager>().StopAllAudio();
+        FindObjectOfType<AudioManager>().Play("Game BGM");
+    }
+
     private void Start()
     {
         rbM = paddleMain.GetComponent<Rigidbody2D>();

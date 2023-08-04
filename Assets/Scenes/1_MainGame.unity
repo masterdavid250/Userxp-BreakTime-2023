@@ -404,6 +404,9 @@ MonoBehaviour:
   - {fileID: 1423780245}
   - {fileID: 555819585}
   - {fileID: 252172275}
+  isBiggerPaddlesActivated: 0
+  isCurrencyChangeActivated: 0
+  isStickyPaddlesActivated: 0
   paddleSprites:
   - {fileID: 21300000, guid: e8725c8dae9fa71408c3afdbb4a8f324, type: 3}
   - {fileID: 21300000, guid: 55dda3449dcdc7f479e446c37897cfa6, type: 3}
@@ -411,7 +414,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ada2d3db90cadd04fbfefdd4ecbdc578, type: 3}
   - {fileID: 21300000, guid: 866bf9254c445ba449369a99215a66a5, type: 3}
   scaleXMultiplier: 2
-  isStickyPaddlesActivated: 0
 --- !u!1 &96769639
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,6 +487,106 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8540110761753040095, guid: d2076c09843236640930b3439d9ab583, type: 3}
   m_PrefabInstance: {fileID: 4827212393409480917}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &118299349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 118299351}
+  - component: {fileID: 118299350}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &118299350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118299349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a6102cbd835a14d93b60b6294078b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Menu BGM
+    clip: {fileID: 8300000, guid: 251274b78e60f0f4c9fb998f5c8c1589, type: 3}
+    volume: 0.5
+    source: {fileID: 0}
+    loop: 1
+  - name: Game BGM
+    clip: {fileID: 8300000, guid: e7b45056cca3a0a4fb4b79d6c670d259, type: 3}
+    volume: 0.5
+    source: {fileID: 0}
+    loop: 1
+  - name: Button Click
+    clip: {fileID: 8300000, guid: 9301365e0d8b58740a27f8dba729e296, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Victory
+    clip: {fileID: 8300000, guid: 55406b6fa21301d44b9983395cce2370, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Defeat
+    clip: {fileID: 8300000, guid: fd67ce3a1e7b02d4eb766e5ab538af24, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Powerup
+    clip: {fileID: 8300000, guid: 215b20eb23c3c5a4f8680170d8bb95dc, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Coin (wall)
+    clip: {fileID: 8300000, guid: 34e831a81a9f7cd4d86553ea47413ebf, type: 3}
+    volume: 0.5
+    source: {fileID: 0}
+    loop: 0
+  - name: Coin (paddle)
+    clip: {fileID: 8300000, guid: e65fc77a2b92bab40a84e28e987bb6de, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Coin (sticky)
+    clip: {fileID: 8300000, guid: 2cdad21097667c94a96748c80ccd4488, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Coin (snack)
+    clip: {fileID: 8300000, guid: a540b50bfed44924ea107bc092bb8242, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Coin (dropped)
+    clip: {fileID: 8300000, guid: 93c1211e06c3d8f4ba4d3e7a17ffba6b, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+--- !u!4 &118299351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118299349}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &132095954
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +842,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f1f26aace51764f88fa90f8d336446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInTutorial: 0
+  isTutorialPowerupDone: 0
+  currentTutorialPowerup: 0
 --- !u!4 &221326992
 Transform:
   m_ObjectHideFlags: 0
@@ -753,7 +858,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &250733605
 GameObject:
@@ -930,7 +1035,7 @@ GameObject:
   - component: {fileID: 281586352}
   m_Layer: 0
   m_Name: PaddleRight
-  m_TagString: Untagged
+  m_TagString: Paddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1241,7 +1346,7 @@ GameObject:
   - component: {fileID: 391774037}
   m_Layer: 0
   m_Name: Paddle1
-  m_TagString: Untagged
+  m_TagString: Paddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1866,7 +1971,7 @@ GameObject:
   - component: {fileID: 656758602}
   m_Layer: 0
   m_Name: UpperBorder
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2951,7 +3056,7 @@ GameObject:
   - component: {fileID: 1047723641}
   m_Layer: 0
   m_Name: RightBorder
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3260,7 +3365,7 @@ GameObject:
   - component: {fileID: 1247823857}
   m_Layer: 0
   m_Name: LeftBorder
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4093,7 +4198,7 @@ GameObject:
   - component: {fileID: 1781409148}
   m_Layer: 0
   m_Name: PaddleLeft
-  m_TagString: Untagged
+  m_TagString: Paddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4427,7 +4532,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2531148307733205209, guid: 5e0e603733c6b39478075cf9799a20a7, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2531148307733205209, guid: 5e0e603733c6b39478075cf9799a20a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4786,7 +4891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16484059722629518, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.29
+      value: -3.4
       objectReference: {fileID: 0}
     - target: {fileID: 16484059722629518, guid: 7fb60c9697bb08b4188f2dc0b4920123, type: 3}
       propertyPath: m_LocalPosition.z

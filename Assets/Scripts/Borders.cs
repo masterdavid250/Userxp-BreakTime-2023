@@ -15,6 +15,7 @@ public class Borders : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ball"))
         {
+            FindObjectOfType<AudioManager>().Play("Coin (dropped)");
             gameManager.Miss();
         }
     }

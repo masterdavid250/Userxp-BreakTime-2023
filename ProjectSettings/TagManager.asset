@@ -7,6 +7,8 @@ TagManager:
   - ball
   - Snacks
   - bonusSnack
+  - Paddle
+  - Wall
   layers:
   - Default
   - TransparentFX
