@@ -11,6 +11,11 @@ public class GameManager : MonoBehaviour
     public int Lives {get; set; }
     public int Score { get; set; }
 
+    [Header("Tutorial Variables")]
+    public bool isInTutorial;
+    public bool isTutorialPowerupDone;
+    public int currentTutorialPowerup;
+
     private int score;
 
     void Awake()
@@ -35,21 +40,29 @@ public class GameManager : MonoBehaviour
 
     public void Miss()
     {
-        if (Lives > 0)
-        {
-            Lives--;
-            this.ball.ResetBall();
-            this.paddle.ResetPaddle();
-        }
+            if (Lives > 0)
+            {
+                Lives--;
+                this.ball.ResetBall();
+                this.paddle.ResetPaddle();
+            }
 
-        else
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+            else if (Lives <= 0 && !isInTutorial)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
     }
 
     public void AddLife()
     {
-        Lives++;
+        if (!isInTutorial)
+        {
+            Lives++;
+        }
+
+        else
+        {
+            Lives = 50;
+        }
     }
 }

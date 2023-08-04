@@ -56,12 +56,12 @@ public class PaddleController : MonoBehaviour
         */
 
         // Horizontal paddle
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             rbM.velocity = Vector2.left * 10;
         }
 
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             rbM.velocity = Vector2.right * 10; 
         }
@@ -91,13 +91,13 @@ public class PaddleController : MonoBehaviour
         }*/
 
         // Vertical paddles (they move together)
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W)  || Input.GetKey(KeyCode.UpArrow))
         {
             rbL.velocity = Vector2.up * 10;
             rbR.velocity = Vector2.up * 10;
         }
         
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S)  || Input.GetKey(KeyCode.DownArrow))
         {
             rbL.velocity = Vector2.down * 10;
             rbR.velocity = Vector2.down * 10;

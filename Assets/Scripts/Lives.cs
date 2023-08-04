@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Lives : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Lives : MonoBehaviour
     void Start()
     {
         gameManager = GameManager.instance;
+
         gameManager.Lives = 1;
     }
 

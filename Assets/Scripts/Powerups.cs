@@ -10,13 +10,13 @@ public class Powerups : MonoBehaviour
     public GameObject               paddleMain;
     public GameObject[]             paddleSides;
     public Image[]                  powerupLights;  
+    public bool                    isBiggerPaddlesActivated = false;
+    public bool                    isCurrencyChangeActivated = false;
+    public bool                     isStickyPaddlesActivated = false;
     [SerializeField] private Sprite[] paddleSprites;
     [SerializeField] private Sprite[] lightSprites;
     [SerializeField] private float  scaleXMultiplier = 2f;
     private SpriteRenderer          paddleMainSpriteRenderer;
-    private bool                    isBiggerPaddlesActivated = false;
-    private bool                    isCurrencyChangeActivated = false;
-    public bool                     isStickyPaddlesActivated = false;
 
     void Start()
     {
@@ -44,9 +44,9 @@ public class Powerups : MonoBehaviour
 
     public void BiggerPaddlePowerup()
     {
-        if (gameManager.Lives > 0 && !isBiggerPaddlesActivated)
+        if (gameManager.Lives > 1 && !isBiggerPaddlesActivated)
         {
-            gameManager.Lives--; 
+            gameManager.Lives -= 2; 
             isBiggerPaddlesActivated = true;
             powerupLights[0].GetComponent<Image>().sprite = lightSprites[1];
 
@@ -65,9 +65,9 @@ public class Powerups : MonoBehaviour
 
     public void CurrencyChange()
     {
-        if (gameManager.Lives > 0 && !isCurrencyChangeActivated)
+        if (gameManager.Lives > 1 && !isCurrencyChangeActivated)
         {
-            gameManager.Lives--;
+            gameManager.Lives -= 2;
             isCurrencyChangeActivated = true;
             powerupLights[1].GetComponent<Image>().sprite = lightSprites[1];
 
@@ -81,10 +81,10 @@ public class Powerups : MonoBehaviour
 
     public void StickyPaddle()
     {
-        if (gameManager.Lives > 0 && !isStickyPaddlesActivated)
+        if (gameManager.Lives > 1 && !isStickyPaddlesActivated)
         {
             // Other part of code for this is in the ball script
-            gameManager.Lives--;
+            gameManager.Lives -=2;
             isStickyPaddlesActivated = true;
             powerupLights[2].GetComponent<Image>().sprite = lightSprites[1];
 
@@ -106,6 +106,10 @@ public class Powerups : MonoBehaviour
         }
         isBiggerPaddlesActivated = false;
         powerupLights[0].GetComponent<Image>().sprite = lightSprites[0];
+        
+        // for tutorial
+        gameManager.isTutorialPowerupDone = true;
+        gameManager.currentTutorialPowerup = 1;
     }
 
     private void ReturnCurrencyToNormal() 
@@ -115,6 +119,10 @@ public class Powerups : MonoBehaviour
         ball.spriteRenderer.sprite = ball.ballSprites[0];
         ball.UpdateColliderSize();
         powerupLights[1].GetComponent<Image>().sprite = lightSprites[0];
+        
+        // for tutorial
+        gameManager.isTutorialPowerupDone = true;
+        gameManager.currentTutorialPowerup = 2;
     }
 
     private void ReturnStickyPaddleToNormal() 
@@ -122,5 +130,9 @@ public class Powerups : MonoBehaviour
         paddleMainSpriteRenderer.sprite = paddleSprites[0];
         isStickyPaddlesActivated = false;
         powerupLights[2].GetComponent<Image>().sprite = lightSprites[0];
+
+        // for tutorial
+        gameManager.isTutorialPowerupDone = true;
+        gameManager.currentTutorialPowerup = 3;
     }
 }

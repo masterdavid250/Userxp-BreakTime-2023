@@ -21,7 +21,7 @@ public class ScoreSystem : MonoBehaviour
     private void Update()
     {
         allSnacks = GameObject.FindGameObjectsWithTag("Snacks");
-        if (allSnacks.Length <= 1)
+        if (allSnacks.Length <= 1 && SceneManager.GetActiveScene().name != "2_Tutorial")
             RespawnSnacks(); 
         scoreText.text = gameManager.Score.ToString();
     }

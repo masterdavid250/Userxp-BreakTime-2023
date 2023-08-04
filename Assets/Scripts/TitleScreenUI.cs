@@ -10,6 +10,11 @@ public class TitleScreenUI : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void ButtonTutorial()
+    {
+        SceneManager.LoadScene("2_Tutorial");
+    }
+
     public void ButtonSettings()
     {
 
