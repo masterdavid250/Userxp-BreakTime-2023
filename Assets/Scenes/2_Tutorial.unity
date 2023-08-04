@@ -366,7 +366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &90411990
 Transform:
   m_ObjectHideFlags: 0
@@ -734,6 +734,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Popup9
       objectReference: {fileID: 0}
+    - target: {fileID: 5281693612781594832, guid: d0c6d9ea7c0b6654092ef5d792b8916f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6209723156670566555, guid: d0c6d9ea7c0b6654092ef5d792b8916f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -961,6 +965,10 @@ PrefabInstance:
     - target: {fileID: 3514167612754491781, guid: 27bd9e5c90e103c4598117c065c23741, type: 3}
       propertyPath: m_Name
       value: Popup8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514167612754491781, guid: 27bd9e5c90e103c4598117c065c23741, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27bd9e5c90e103c4598117c065c23741, type: 3}
@@ -1778,7 +1786,6 @@ MonoBehaviour:
   - {fileID: 5928909243278695239}
   bonusSnackObj: {fileID: 1812495744}
   powerupsObj: {fileID: 90411989}
-  popUpIndex: 0
 --- !u!1001 &466500262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1789,6 +1796,10 @@ PrefabInstance:
     - target: {fileID: 1010786484973683078, guid: d10b516713600c847898f0c45bfc8147, type: 3}
       propertyPath: m_Name
       value: Popup4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1010786484973683078, guid: d10b516713600c847898f0c45bfc8147, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1253705935529540045, guid: d10b516713600c847898f0c45bfc8147, type: 3}
       propertyPath: m_Pivot.x
@@ -2270,6 +2281,10 @@ PrefabInstance:
     - target: {fileID: 5066408892377500097, guid: 7ab93ed5c0f99ca408ef0490058daf13, type: 3}
       propertyPath: m_Name
       value: Popup1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066408892377500097, guid: 7ab93ed5c0f99ca408ef0490058daf13, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6426221187711152522, guid: 7ab93ed5c0f99ca408ef0490058daf13, type: 3}
       propertyPath: m_Pivot.x
@@ -2861,6 +2876,10 @@ PrefabInstance:
     - target: {fileID: 680583478165349974, guid: 5061a6da18cd5ab46a8cd4b3387fb97e, type: 3}
       propertyPath: m_Name
       value: Popup7
+      objectReference: {fileID: 0}
+    - target: {fileID: 680583478165349974, guid: 5061a6da18cd5ab46a8cd4b3387fb97e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1590031275276475933, guid: 5061a6da18cd5ab46a8cd4b3387fb97e, type: 3}
       propertyPath: m_Pivot.x
@@ -4090,6 +4109,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Popup11
       objectReference: {fileID: 0}
+    - target: {fileID: 7132319815669041929, guid: d005bf879279af340b0a3c692d8436ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9050565098857886530, guid: d005bf879279af340b0a3c692d8436ae, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4186,6 +4209,10 @@ PrefabInstance:
     - target: {fileID: 4982183413294786295, guid: 6e385209fce3b1d40ad148c9abe1f381, type: 3}
       propertyPath: m_Name
       value: Popup5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982183413294786295, guid: 6e385209fce3b1d40ad148c9abe1f381, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6504679449073639100, guid: 6e385209fce3b1d40ad148c9abe1f381, type: 3}
       propertyPath: m_Pivot.x
@@ -4745,6 +4772,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Popup6
       objectReference: {fileID: 0}
+    - target: {fileID: 2811664126353021173, guid: 6f52e39d953988c479abc6ff4657fe06, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4063390030879334590, guid: 6f52e39d953988c479abc6ff4657fe06, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5042,6 +5073,10 @@ PrefabInstance:
     - target: {fileID: 1960754346696724398, guid: f8b7011d1c282de409065b41827b2f79, type: 3}
       propertyPath: m_Name
       value: Popup10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960754346696724398, guid: f8b7011d1c282de409065b41827b2f79, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b7011d1c282de409065b41827b2f79, type: 3}
@@ -5721,6 +5756,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Popup2
       objectReference: {fileID: 0}
+    - target: {fileID: 1467778676376503184, guid: 8e3bbb79ab09c6d48bdb40bb5f319bc1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e3bbb79ab09c6d48bdb40bb5f319bc1, type: 3}
 --- !u!1 &1954007785 stripped
@@ -5824,6 +5863,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 462309556}
     m_Modifications:
+    - target: {fileID: 6309694095108430821, guid: 84a740e4da18a1d40a07c4a15b876754, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309694095108430821, guid: 84a740e4da18a1d40a07c4a15b876754, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 3372220415
+      objectReference: {fileID: 0}
     - target: {fileID: 7896347955145781511, guid: 84a740e4da18a1d40a07c4a15b876754, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5911,6 +5958,14 @@ PrefabInstance:
     - target: {fileID: 8283369536826018124, guid: 84a740e4da18a1d40a07c4a15b876754, type: 3}
       propertyPath: m_Name
       value: Popup3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283369536826018124, guid: 84a740e4da18a1d40a07c4a15b876754, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195356874767294566, guid: 84a740e4da18a1d40a07c4a15b876754, type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84a740e4da18a1d40a07c4a15b876754, type: 3}

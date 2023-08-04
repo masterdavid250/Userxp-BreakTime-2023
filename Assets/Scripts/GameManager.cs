@@ -40,16 +40,16 @@ public class GameManager : MonoBehaviour
 
     public void Miss()
     {
-            if (Lives > 0)
-            {
-                Lives--;
-                this.ball.ResetBall();
-                this.paddle.ResetPaddle();
-            }
+        if (Lives > 0)
+        {
+            Lives--;
+            this.ball.ResetBall();
+            this.paddle.ResetPaddle();
+        }
 
-            else if (Lives <= 0 && !isInTutorial)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        else if (Lives <= 0 && !isInTutorial)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
     }
 
@@ -64,5 +64,10 @@ public class GameManager : MonoBehaviour
         {
             Lives = 50;
         }
+    }
+
+    public void SetLifeTo50()
+    {
+        Lives = 50;
     }
 }

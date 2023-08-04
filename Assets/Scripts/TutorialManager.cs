@@ -2,6 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.EventSystems.EventTrigger;
+
+public enum TutorialPhase
+{
+    Movement, 
+    PressSpace,
+    ShowDifferentSnacksText, 
+    HitSnacksToSeeHitPoints,
+    Lives,
+    BonusSnack,
+    PowerupsIntro,
+    BigPaddles,
+    CoinSwapText, 
+    CoinSwapHit,
+    StickyPaddle,
+    FinalTrialText,
+    FinalTrialGame,
+    EndText
+}
 
 public class TutorialManager : MonoBehaviour
 {
@@ -10,276 +29,172 @@ public class TutorialManager : MonoBehaviour
     public GameObject[] tutorialSnackstack;
     public GameObject bonusSnackObj;
     public GameObject powerupsObj;
-    [SerializeField] private int popUpIndex;
     private GameManager gameManager;
-    private Powerups powerupsScript;
-    private bool isTutorialDone;
-    private bool hasFinalPartStarted;
-    private float waitTime = 5f;
-    private float currentWaitTime;
+    private bool[] movementCheckers = new bool[4] { false, false, false, false };
+    private int movementStack = 0;
+    private int popupNumber = 0;
+    private int snackGroupNumber = 0;
+    private bool isBallIntroLaunched = false; 
+    private TutorialPhase tutorialPhase = TutorialPhase.Movement; 
 
     void Start()
     {
-        UpdatePopUp();
         gameManager = GameManager.instance;
         gameManager.isInTutorial = true;
-        currentWaitTime = waitTime;
-        powerupsScript = powerupsObj.GetComponent<Powerups>();
-        gameManager.AddLife();
-    }
-
-    // Basically delay until when to keep popup
-    private IEnumerator CO_KeepPopup(float delay)
-    {
-        yield return new WaitForSecondsRealtime(delay);
-        Time.timeScale = 1;
-
-        if (popUpIndex != 3 && popUpIndex != 9 && popUpIndex != 10)
-        popUps[popUpIndex].GetComponent<CanvasGroup>().alpha = 0;
-        Debug.Log($"A: {popUpIndex}");
-    }
-
-    // Adds delay when swtiching to next popup
-    private IEnumerator CO_AddDelayToNext(float delay)
-    {
-        Debug.Log($"timescalse: {Time.timeScale}");
-        yield return new WaitForSecondsRealtime(delay);
-    }
-
-    // Switching to the next popup
-    private IEnumerator CO_GoToNextPopup(float keepDelay, float delayToNext)
-    {
-        yield return StartCoroutine(CO_KeepPopup(keepDelay));
-        yield return StartCoroutine(CO_AddDelayToNext(delayToNext));
-        isTutorialDone = false;
-        popUpIndex++;
-        UpdatePopUp();
-    }
-
-    // Delays next popup for tutorials where players need to test mechanics first
-    private IEnumerator CO_DelayNextPopup(float delay)
-    {
-        yield return StartCoroutine(CO_AddDelayToNext(delay));
-        isTutorialDone = false;
-        gameManager.isTutorialPowerupDone = false;
-        popUpIndex++;
-        UpdatePopUp();
-    }
-
-    void UpdatePopUp()
-    {
-        for (int i = 0; i < popUps.Length; i++)
+        gameManager.SetLifeTo50();
+        for (int i = 0; i < movementCheckers.Length; i++)
         {
-            if (i == popUpIndex)
-            {
-
-                popUps[i].SetActive(true);
-            }
-
-            else
-            {
-                popUps[i].SetActive(false);
-            }
+            movementCheckers[i] = false;
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Teaching movement
-        if (popUpIndex == 0)
-        {
-            if (!isTutorialDone)
-            {
-                if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow)) ||
-                    (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S)))
-                {
-                    isTutorialDone = true;
-                    StartCoroutine(CO_GoToNextPopup(3f, 2f));
-                }
-            }
-        }
-
-        // Launching ball
-        else if (popUpIndex == 1)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                StartCoroutine(CO_GoToNextPopup(1f, 5f));
-            }
-        }
-
-        // Showing different-sized snacks
-        else if (popUpIndex == 2)
-        {
-            tutorialSnackstack[0].SetActive(true);
-            Time.timeScale = 0;
-
-            if (!isTutorialDone)
-            {
-                StartCoroutine(CO_KeepPopup(5f));
-                
-                if (GameObject.FindGameObjectsWithTag("Snacks").Length == 0)
-                {
-                    isTutorialDone = true;
-                    tutorialSnackstack[0].SetActive(false);
-                    StartCoroutine(CO_DelayNextPopup(2f));
-                }
-            }
-        }
-
-        // Lives explanation
-        else if (popUpIndex == 3)
-        {
+        if (gameManager.Lives <= 0)
+            gameManager.SetLifeTo50();
+        if (tutorialPhase == TutorialPhase.Movement && Input.GetKeyDown(KeyCode.Space))
+            isBallIntroLaunched = true; 
+        if (isBallIntroLaunched)
             ball.ResetBall();
 
-            if (currentWaitTime <= 0)
+        //First Tutorial Movement Tec
+        if (tutorialPhase == TutorialPhase.Movement)
+        {
+            if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && !movementCheckers[0])
+                MovementTutorialCheck(0);
+            if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && !movementCheckers[1])
+                MovementTutorialCheck(1);
+            if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && !movementCheckers[2])
+                MovementTutorialCheck(2);
+            if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && !movementCheckers[3])
+                MovementTutorialCheck(3);
+            if (movementStack >= 4)
+                ShowAndHidePopUp();
+        }
+        //Second Tutorial Press Space
+        else if (tutorialPhase == TutorialPhase.PressSpace)
+        {
+            isBallIntroLaunched = false; 
+            if (Input.GetKeyDown(KeyCode.Space))
+                ShowAndHidePopUp();
+        }
+        //Third Tutorial Showing Different Snacks
+        else if (tutorialPhase == TutorialPhase.ShowDifferentSnacksText)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+                JustHidePopUpDontShowNext();
+        }
+        //Fourth Tutorial Showing Number of Hits 
+        else if (tutorialPhase == TutorialPhase.HitSnacksToSeeHitPoints)
+        {
+            tutorialSnackstack[snackGroupNumber].SetActive(true);
+            if (GameObject.FindGameObjectsWithTag("Snacks").Length == 0)
             {
-                currentWaitTime = waitTime;
-                popUpIndex++;
-                UpdatePopUp();
-            }
-
-            else
-            {
-                currentWaitTime -= Time.deltaTime;
-                Debug.Log(currentWaitTime);
+                DisableSnackEnablePopUp();
+                snackGroupNumber++;
             }
         }
-
-        // Bonus snack explanation
-        else if (popUpIndex == 4)
+        //Fifth Tutorial Lives
+        else if (tutorialPhase == TutorialPhase.Lives)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+                ResetBallAndNextPopUp();
+        }
+        //Sixth Tutorial Bonus Snacks
+        else if (tutorialPhase == TutorialPhase.BonusSnack)
         {
             bonusSnackObj.GetComponent<BonusSnack>().enabled = true;
-
-            if (currentWaitTime <= 0)
-            {
-                currentWaitTime = waitTime;
-                popUpIndex++;
-                UpdatePopUp();
-            }
-
-            else
-            {
-                currentWaitTime -= Time.deltaTime;
-                Debug.Log(currentWaitTime);
-            }
+            if (Input.GetKeyDown(KeyCode.Return))
+                ResetBallAndNextPopUp();
         }
-
-        // Powerups explanation
-        else if (popUpIndex == 5)
-        {
-            if (currentWaitTime <= 0)
-            {
-                currentWaitTime = waitTime;
-                popUpIndex++;
-                UpdatePopUp();
-            }
-
-            else
-            {
-                currentWaitTime -= Time.deltaTime;
-                Debug.Log(currentWaitTime);
-            }
+        //Seventh Tutorial Powerups Introduction 
+        else if (tutorialPhase == TutorialPhase.PowerupsIntro)
+        { 
+            if (Input.GetKeyDown(KeyCode.Return))
+                ResetBallAndNextPopUp();
         }
-
-        // Using big paddles
-        else if (popUpIndex == 6)
-        {
+        //Eighth Tutorial Big Paddles
+        else if (tutorialPhase == TutorialPhase.BigPaddles)
+        {   
             powerupsObj.SetActive(true);
-
-            if (!isTutorialDone)
+            if (Input.GetKeyDown(KeyCode.Q) || (Input.GetKeyDown(KeyCode.Z)))
+                ResetBallAndNextPopUp();
+        }
+        //Ninth Tutorial Coin Swap Text
+        else if (tutorialPhase == TutorialPhase.CoinSwapText)
+        {
+            if (Input.GetKeyDown(KeyCode.E) || (Input.GetKeyDown(KeyCode.X)))
+                JustHidePopUpDontShowNext();
+        }
+        //Tenth Tutorial Coin Swap Hitting the Snacks
+        else if (tutorialPhase == TutorialPhase.CoinSwapHit)
+        {
+            tutorialSnackstack[snackGroupNumber].SetActive(true);
+            if (GameObject.FindGameObjectsWithTag("Snacks").Length <= 1)
             {
-                StartCoroutine(CO_KeepPopup(2f));
-
-                if (gameManager.isTutorialPowerupDone && gameManager.currentTutorialPowerup == 1)
-                {
-                    isTutorialDone = true;
-                    StartCoroutine(CO_DelayNextPopup(2f));
-                }
+                DisableSnackEnablePopUp();
+                snackGroupNumber++; 
             }
         }
-
-        // Using coin swap paddles
-        else if (popUpIndex == 7)
+        //Eleventh Tutorial Sticky Paddle 
+        else if (tutorialPhase == TutorialPhase.StickyPaddle)
         {
-            tutorialSnackstack[1].SetActive(true);
-
-            if (!isTutorialDone)
-            {
-                StartCoroutine(CO_KeepPopup(2f));
-
-                if (gameManager.isTutorialPowerupDone && GameObject.FindGameObjectsWithTag("Snacks").Length <= 1  && gameManager.currentTutorialPowerup == 2)
-                {
-                    tutorialSnackstack[1].SetActive(false);
-                    isTutorialDone = true;
-                    StartCoroutine(CO_DelayNextPopup(2f));
-                }
-            }
+            if (Input.GetKeyDown(KeyCode.R) || (Input.GetKeyDown(KeyCode.C)))
+                ShowAndHidePopUp();
         }
-
-        // Using sticky paddle
-        else if (popUpIndex == 8)
+        //Twelfth Tutorial Final Trial Text
+        else if (tutorialPhase == TutorialPhase.FinalTrialText)
         {
-            Time.timeScale = 0;
-
-            if (!isTutorialDone)
-            {
-                StartCoroutine(CO_KeepPopup(3f));
-
-                if (gameManager.isTutorialPowerupDone && gameManager.currentTutorialPowerup == 3)
-                {
-                    isTutorialDone = true;
-                    StartCoroutine(CO_DelayNextPopup(2f));
-                }
-            }
+            if (Input.GetKeyDown(KeyCode.Return))
+                JustHidePopUpDontShowNext(); 
         }
-
-        // start trial round
-        else if (popUpIndex == 9)
+        //Thirteenth Tutorial Final Trial Game
+        else if (tutorialPhase == TutorialPhase.FinalTrialGame)
         {
-            tutorialSnackstack[2].SetActive(true);
-
-            if (currentWaitTime <= 0)
-            {
-                popUps[popUpIndex].GetComponent<CanvasGroup>().alpha = 0;
-
-                if (!isTutorialDone)
-                {
-                    if (GameObject.FindGameObjectsWithTag("Snacks").Length <= 1)
-                    {
-                        isTutorialDone = true;
-                        currentWaitTime = waitTime * 1.5f;
-                        tutorialSnackstack[2].SetActive(false);
-                        StartCoroutine(CO_DelayNextPopup(1f));
-                    }
-                }
-            }
-
-            else
-            {
-                currentWaitTime -= Time.deltaTime;
-                Debug.Log(currentWaitTime);
-                ball.ResetBall();
-            }
+            tutorialSnackstack[snackGroupNumber].SetActive(true);
+            if (GameObject.FindGameObjectsWithTag("Snacks").Length <= 1)
+                DisableSnackEnablePopUp();
         }
-
-        // after trial round
-        else if (popUpIndex == 10)
+        //Fourteenth Tutorial Final Text 
+        else if (tutorialPhase == TutorialPhase.EndText)
         {
-            ball.ResetBall();
-
-            if (currentWaitTime <= 0)
-            {
-                currentWaitTime = waitTime;
+            if (Input.GetKeyDown(KeyCode.Return))
                 SceneManager.LoadScene("0_TitleScreen");
-            }
-
-            else
-            {
-                currentWaitTime -= Time.deltaTime;
-                Debug.Log(currentWaitTime);
-            }
         }
+    }
+
+    private void MovementTutorialCheck(int entry)
+    {
+        movementStack++;
+        movementCheckers[entry] = true;
+    }
+
+    private void ShowAndHidePopUp()
+    {
+        popUps[popupNumber].SetActive(false);
+        popupNumber++;
+        popUps[popupNumber].SetActive(true);
+        tutorialPhase++;
+    }
+
+    private void ResetBallAndNextPopUp()
+    {
+        ball.ResetBall();
+        ShowAndHidePopUp();
+    }
+
+    private void JustHidePopUpDontShowNext()
+    {
+        popUps[popupNumber].SetActive(false);
+        popupNumber++;
+        tutorialPhase++;
+    }
+
+    private void DisableSnackEnablePopUp()
+    {
+        tutorialSnackstack[snackGroupNumber].SetActive(false);
+        popUps[popupNumber].SetActive(true);
+        ball.ResetBall();
+        tutorialPhase++;
     }
 }
