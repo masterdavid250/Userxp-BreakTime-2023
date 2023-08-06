@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
     private AudioSource[] allAudioSources;
 
+    public int volume = 5;
+
     private void Awake()
     {
         if (instance == null)
@@ -27,6 +29,14 @@ public class AudioManager : MonoBehaviour
 
             s.source.volume = s.volume;
             s.source.loop = s.loop;
+        }
+    }
+
+    private void Update()
+    {
+        foreach (Sound s in sounds)
+        {
+            s.source.volume = s.volume * ((float)volume/10);
         }
     }
 

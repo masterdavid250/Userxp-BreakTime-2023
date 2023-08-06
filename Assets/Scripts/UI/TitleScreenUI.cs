@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreenUI : MonoBehaviour
 {
+    [SerializeField] GameObject settings;
+
     private void Awake()
     {
         FindObjectOfType<AudioManager>().StopAllAudio();
@@ -25,6 +27,8 @@ public class TitleScreenUI : MonoBehaviour
 
     public void ButtonSettings()
     {
+        gameObject.SetActive(false);
+        settings.SetActive(true);
         FindObjectOfType<AudioManager>().Play("Button Click");
     }
 

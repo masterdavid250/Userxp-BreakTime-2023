@@ -2785,6 +2785,7 @@ MonoBehaviour:
     volume: 1
     source: {fileID: 0}
     loop: 0
+  volume: 5
 --- !u!4 &769170985
 Transform:
   m_ObjectHideFlags: 0
