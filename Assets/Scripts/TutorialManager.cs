@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using static UnityEngine.EventSystems.EventTrigger;
 
 public enum TutorialPhase
 {
     Movement, 
-    PressSpace,
     ShowDifferentSnacksText, 
+    PressSpace,
     HitSnacksToSeeHitPoints,
     Lives,
     BonusSnack,
@@ -25,10 +26,12 @@ public enum TutorialPhase
 public class TutorialManager : MonoBehaviour
 {
     public GameObject[] popUps;
+    public GameObject[] checkboxes;
     public Ball ball;
     public GameObject[] tutorialSnackstack;
     public GameObject bonusSnackObj;
     public GameObject powerupsObj;
+    [SerializeField] private Sprite enabledCheckboxSprite;
     private GameManager gameManager;
     private bool[] movementCheckers = new bool[4] { false, false, false, false };
     private int movementStack = 0;
@@ -42,6 +45,7 @@ public class TutorialManager : MonoBehaviour
         gameManager = GameManager.instance;
         gameManager.isInTutorial = true;
         gameManager.SetLifeTo50();
+
         for (int i = 0; i < movementCheckers.Length; i++)
         {
             movementCheckers[i] = false;
@@ -52,7 +56,7 @@ public class TutorialManager : MonoBehaviour
     {
         if (gameManager.Lives <= 0)
             gameManager.SetLifeTo50();
-        if (tutorialPhase == TutorialPhase.Movement && Input.GetKeyDown(KeyCode.Space))
+        if ((tutorialPhase == TutorialPhase.Movement || tutorialPhase == TutorialPhase.ShowDifferentSnacksText) && Input.GetKeyDown(KeyCode.Space))
             isBallIntroLaunched = true; 
         if (isBallIntroLaunched)
             ball.ResetBall();
@@ -61,29 +65,48 @@ public class TutorialManager : MonoBehaviour
         if (tutorialPhase == TutorialPhase.Movement)
         {
             if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && !movementCheckers[0])
+            {
                 MovementTutorialCheck(0);
+                checkboxes[0].GetComponent<Image>().sprite = enabledCheckboxSprite;
+            }
+
             if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && !movementCheckers[1])
+            {
                 MovementTutorialCheck(1);
+                checkboxes[1].GetComponent<Image>().sprite = enabledCheckboxSprite;
+            }
+
             if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && !movementCheckers[2])
+            {
                 MovementTutorialCheck(2);
+                checkboxes[2].GetComponent<Image>().sprite = enabledCheckboxSprite;
+            }
+
             if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && !movementCheckers[3])
+            {
                 MovementTutorialCheck(3);
+                checkboxes[3].GetComponent<Image>().sprite = enabledCheckboxSprite;
+            }
+
             if (movementStack >= 4)
                 ShowAndHidePopUp();
         }
-        //Second Tutorial Press Space
+
+        //Second Tutorial Showing Different Snacks
+        else if (tutorialPhase == TutorialPhase.ShowDifferentSnacksText)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+                ShowAndHidePopUp();
+        }
+
+        //Third Tutorial Press Space
         else if (tutorialPhase == TutorialPhase.PressSpace)
         {
             isBallIntroLaunched = false; 
             if (Input.GetKeyDown(KeyCode.Space))
-                ShowAndHidePopUp();
-        }
-        //Third Tutorial Showing Different Snacks
-        else if (tutorialPhase == TutorialPhase.ShowDifferentSnacksText)
-        {
-            if (Input.GetKeyDown(KeyCode.Return))
                 JustHidePopUpDontShowNext();
         }
+
         //Fourth Tutorial Showing Number of Hits 
         else if (tutorialPhase == TutorialPhase.HitSnacksToSeeHitPoints)
         {
@@ -94,12 +117,14 @@ public class TutorialManager : MonoBehaviour
                 snackGroupNumber++;
             }
         }
+
         //Fifth Tutorial Lives
         else if (tutorialPhase == TutorialPhase.Lives)
         {
             if (Input.GetKeyDown(KeyCode.Return))
                 ResetBallAndNextPopUp();
         }
+
         //Sixth Tutorial Bonus Snacks
         else if (tutorialPhase == TutorialPhase.BonusSnack)
         {
@@ -107,12 +132,14 @@ public class TutorialManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return))
                 ResetBallAndNextPopUp();
         }
+
         //Seventh Tutorial Powerups Introduction 
         else if (tutorialPhase == TutorialPhase.PowerupsIntro)
         { 
             if (Input.GetKeyDown(KeyCode.Return))
                 ResetBallAndNextPopUp();
         }
+
         //Eighth Tutorial Big Paddles
         else if (tutorialPhase == TutorialPhase.BigPaddles)
         {   
@@ -120,12 +147,14 @@ public class TutorialManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q) || (Input.GetKeyDown(KeyCode.Z)))
                 ResetBallAndNextPopUp();
         }
+
         //Ninth Tutorial Coin Swap Text
         else if (tutorialPhase == TutorialPhase.CoinSwapText)
         {
             if (Input.GetKeyDown(KeyCode.E) || (Input.GetKeyDown(KeyCode.X)))
                 JustHidePopUpDontShowNext();
         }
+
         //Tenth Tutorial Coin Swap Hitting the Snacks
         else if (tutorialPhase == TutorialPhase.CoinSwapHit)
         {
@@ -136,18 +165,21 @@ public class TutorialManager : MonoBehaviour
                 snackGroupNumber++; 
             }
         }
+
         //Eleventh Tutorial Sticky Paddle 
         else if (tutorialPhase == TutorialPhase.StickyPaddle)
         {
             if (Input.GetKeyDown(KeyCode.R) || (Input.GetKeyDown(KeyCode.C)))
                 ShowAndHidePopUp();
         }
+
         //Twelfth Tutorial Final Trial Text
         else if (tutorialPhase == TutorialPhase.FinalTrialText)
         {
             if (Input.GetKeyDown(KeyCode.Return))
                 JustHidePopUpDontShowNext(); 
         }
+
         //Thirteenth Tutorial Final Trial Game
         else if (tutorialPhase == TutorialPhase.FinalTrialGame)
         {
@@ -155,6 +187,7 @@ public class TutorialManager : MonoBehaviour
             if (GameObject.FindGameObjectsWithTag("Snacks").Length <= 1)
                 DisableSnackEnablePopUp();
         }
+
         //Fourteenth Tutorial Final Text 
         else if (tutorialPhase == TutorialPhase.EndText)
         {

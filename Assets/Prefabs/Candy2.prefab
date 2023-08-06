@@ -128,3 +128,6 @@ MonoBehaviour:
   snackName: Sakuchoo
   health: 0
   points: 0
+  snackSprites:
+  - {fileID: 21300000, guid: 0347947ddc6cc1546a08767cc107faaa, type: 3}
+  - {fileID: 21300000, guid: f51e23cf7476c6d4bae7e6c37cf5749d, type: 3}

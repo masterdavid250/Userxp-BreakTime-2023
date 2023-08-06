@@ -150,3 +150,8 @@ MonoBehaviour:
   snackName: SakuSticks
   health: 4
   points: 10
+  snackSprites:
+  - {fileID: 21300000, guid: cf3a59646fa5b5d4eb5686ac1278a135, type: 3}
+  - {fileID: 21300000, guid: a1d5a883fff66844188a5be3136f8ac4, type: 3}
+  - {fileID: 21300000, guid: 094e45f7588476849bd86d2ea460609b, type: 3}
+  - {fileID: 21300000, guid: 799138bf05c510e47b49243eee702b6a, type: 3}

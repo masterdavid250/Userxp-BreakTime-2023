@@ -8,6 +8,8 @@ public class Brick : MonoBehaviour
     [SerializeField] private string snackName;
     [SerializeField] private int health;
     [SerializeField] private int points;
+    [SerializeField] private Sprite[] snackSprites;
+    public int spriteCount;
     
     private BonusSnack bonusSnack;
     private GameManager gameManager;
@@ -35,6 +37,20 @@ public class Brick : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("ball"))
+        {
             health -= ball.ballDamage;
+
+            // if (spriteCount < snackSprites.Length - 1 && snackSprites.Length != 0)
+            if (health > 0 && snackSprites.Length != 0)
+            {
+                spriteCount++;
+                this.GetComponent<SpriteRenderer>().sprite = snackSprites[spriteCount];
+            }
+
+            else if (health <= 0 && snackSprites.Length != 0)
+            {
+                this.GetComponent<SpriteRenderer>().sprite = snackSprites[snackSprites.Length - 1];
+            }
+        }
     }
 }

@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &42182255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2470958156107340144, guid: 7ab93ed5c0f99ca408ef0490058daf13, type: 3}
+  m_PrefabInstance: {fileID: 638015136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &57077978
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,10 +739,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Popup9
       objectReference: {fileID: 0}
-    - target: {fileID: 5281693612781594832, guid: d0c6d9ea7c0b6654092ef5d792b8916f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6209723156670566555, guid: d0c6d9ea7c0b6654092ef5d792b8916f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -965,10 +966,6 @@ PrefabInstance:
     - target: {fileID: 3514167612754491781, guid: 27bd9e5c90e103c4598117c065c23741, type: 3}
       propertyPath: m_Name
       value: Popup8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3514167612754491781, guid: 27bd9e5c90e103c4598117c065c23741, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27bd9e5c90e103c4598117c065c23741, type: 3}
@@ -1737,8 +1734,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 128585074}
-  - {fileID: 1746757359}
   - {fileID: 871859987}
+  - {fileID: 1746757359}
   - {fileID: 468397882}
   - {fileID: 1787414085}
   - {fileID: 1414719253}
@@ -1769,8 +1766,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popUps:
   - {fileID: 128585073}
-  - {fileID: 1746757358}
   - {fileID: 871859986}
+  - {fileID: 1746757358}
   - {fileID: 468397881}
   - {fileID: 1787414084}
   - {fileID: 1414719252}
@@ -1779,6 +1776,11 @@ MonoBehaviour:
   - {fileID: 1578795103}
   - {fileID: 1767323021}
   - {fileID: 1495232037}
+  checkboxes:
+  - {fileID: 623720575}
+  - {fileID: 42182255}
+  - {fileID: 1041767703}
+  - {fileID: 1615703588}
   ball: {fileID: 1736769056}
   tutorialSnackstack:
   - {fileID: 1954007785}
@@ -1786,6 +1788,7 @@ MonoBehaviour:
   - {fileID: 5928909243278695239}
   bonusSnackObj: {fileID: 1812495744}
   powerupsObj: {fileID: 90411989}
+  enabledCheckboxSprite: {fileID: 21300000, guid: ba00a2bc55114d44a9d0bad888a9a9ca, type: 3}
 --- !u!1001 &466500262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2271,6 +2274,11 @@ RectTransform:
   m_AnchoredPosition: {x: -192.2, y: 4}
   m_SizeDelta: {x: 72, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &623720575 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7350129710447135783, guid: 7ab93ed5c0f99ca408ef0490058daf13, type: 3}
+  m_PrefabInstance: {fileID: 638015136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &638015136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2281,10 +2289,6 @@ PrefabInstance:
     - target: {fileID: 5066408892377500097, guid: 7ab93ed5c0f99ca408ef0490058daf13, type: 3}
       propertyPath: m_Name
       value: Popup1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5066408892377500097, guid: 7ab93ed5c0f99ca408ef0490058daf13, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6426221187711152522, guid: 7ab93ed5c0f99ca408ef0490058daf13, type: 3}
       propertyPath: m_Pivot.x
@@ -2320,7 +2324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6426221187711152522, guid: 7ab93ed5c0f99ca408ef0490058daf13, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 376
+      value: 612.1268
       objectReference: {fileID: 0}
     - target: {fileID: 6426221187711152522, guid: 7ab93ed5c0f99ca408ef0490058daf13, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2356,7 +2360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6426221187711152522, guid: 7ab93ed5c0f99ca408ef0490058daf13, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 282.9405
+      value: 170.93661
       objectReference: {fileID: 0}
     - target: {fileID: 6426221187711152522, guid: 7ab93ed5c0f99ca408ef0490058daf13, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2878,10 +2882,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Popup7
       objectReference: {fileID: 0}
-    - target: {fileID: 680583478165349974, guid: 5061a6da18cd5ab46a8cd4b3387fb97e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1590031275276475933, guid: 5061a6da18cd5ab46a8cd4b3387fb97e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3128,7 +3128,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7482667652216324306, guid: a795f3b1bf5188449b9da1b12271919f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 406a0727280f434489189edbfffd6dde, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3679,6 +3679,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e3c1daf2b453f24d98c24d05a1d84f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1041767703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6680122532828424800, guid: 7ab93ed5c0f99ca408ef0490058daf13, type: 3}
+  m_PrefabInstance: {fileID: 638015136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1047723639
 GameObject:
   m_ObjectHideFlags: 0
@@ -3725,7 +3730,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.01070416}
+  m_Offset: {x: 6.194444, y: 0.01070416}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3736,7 +3741,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.097527}
+  m_Size: {x: 13.388888, y: 1.097527}
   m_EdgeRadius: 0
 --- !u!212 &1047723642
 SpriteRenderer:
@@ -4873,6 +4878,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6209723156670566555, guid: d0c6d9ea7c0b6654092ef5d792b8916f, type: 3}
   m_PrefabInstance: {fileID: 213107484}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1615703588 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2797462494575037012, guid: 7ab93ed5c0f99ca408ef0490058daf13, type: 3}
+  m_PrefabInstance: {fileID: 638015136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1623859883 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7761444469798138576, guid: f4f9655f4c980de459424b72e5609098, type: 3}
@@ -5679,7 +5689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 810541254508461019, guid: 8e3bbb79ab09c6d48bdb40bb5f319bc1, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 810541254508461019, guid: 8e3bbb79ab09c6d48bdb40bb5f319bc1, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5755,11 +5765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1467778676376503184, guid: 8e3bbb79ab09c6d48bdb40bb5f319bc1, type: 3}
       propertyPath: m_Name
-      value: Popup2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1467778676376503184, guid: 8e3bbb79ab09c6d48bdb40bb5f319bc1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      value: Popup3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e3bbb79ab09c6d48bdb40bb5f319bc1, type: 3}
@@ -5864,14 +5870,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 462309556}
     m_Modifications:
-    - target: {fileID: 6309694095108430821, guid: 84a740e4da18a1d40a07c4a15b876754, type: 3}
-      propertyPath: m_fontColor.a
-      value: 0.78431374
-      objectReference: {fileID: 0}
-    - target: {fileID: 6309694095108430821, guid: 84a740e4da18a1d40a07c4a15b876754, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 3372220415
-      objectReference: {fileID: 0}
     - target: {fileID: 7896347955145781511, guid: 84a740e4da18a1d40a07c4a15b876754, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5882,7 +5880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7896347955145781511, guid: 84a740e4da18a1d40a07c4a15b876754, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7896347955145781511, guid: 84a740e4da18a1d40a07c4a15b876754, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5958,15 +5956,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8283369536826018124, guid: 84a740e4da18a1d40a07c4a15b876754, type: 3}
       propertyPath: m_Name
-      value: Popup3
+      value: Popup2
       objectReference: {fileID: 0}
     - target: {fileID: 8283369536826018124, guid: 84a740e4da18a1d40a07c4a15b876754, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9195356874767294566, guid: 84a740e4da18a1d40a07c4a15b876754, type: 3}
-      propertyPath: m_Color.a
-      value: 0.39215687
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84a740e4da18a1d40a07c4a15b876754, type: 3}
