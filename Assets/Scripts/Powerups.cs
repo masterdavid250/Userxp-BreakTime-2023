@@ -28,16 +28,19 @@ public class Powerups : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Z))
         {
+            FindObjectOfType<AudioManager>().Play("Powerup");
             BiggerPaddlePowerup();
         }
 
         else if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.X))
         {
+            FindObjectOfType<AudioManager>().Play("Powerup");
             CurrencyChange();
         }
 
         else if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.C))
         {
+            FindObjectOfType<AudioManager>().Play("Powerup");
             StickyPaddle();
         }
     }
