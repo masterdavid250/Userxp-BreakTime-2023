@@ -2799,107 +2799,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &769170983
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 769170985}
-  - component: {fileID: 769170984}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &769170984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769170983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a6102cbd835a14d93b60b6294078b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: Menu BGM
-    clip: {fileID: 8300000, guid: 251274b78e60f0f4c9fb998f5c8c1589, type: 3}
-    volume: 0.5
-    source: {fileID: 0}
-    loop: 1
-  - name: Game BGM
-    clip: {fileID: 8300000, guid: e7b45056cca3a0a4fb4b79d6c670d259, type: 3}
-    volume: 0.5
-    source: {fileID: 0}
-    loop: 1
-  - name: Button Click
-    clip: {fileID: 8300000, guid: 9301365e0d8b58740a27f8dba729e296, type: 3}
-    volume: 1
-    source: {fileID: 0}
-    loop: 0
-  - name: Victory
-    clip: {fileID: 8300000, guid: 55406b6fa21301d44b9983395cce2370, type: 3}
-    volume: 1
-    source: {fileID: 0}
-    loop: 0
-  - name: Defeat
-    clip: {fileID: 8300000, guid: fd67ce3a1e7b02d4eb766e5ab538af24, type: 3}
-    volume: 1
-    source: {fileID: 0}
-    loop: 0
-  - name: Powerup
-    clip: {fileID: 8300000, guid: 215b20eb23c3c5a4f8680170d8bb95dc, type: 3}
-    volume: 1
-    source: {fileID: 0}
-    loop: 0
-  - name: Coin (wall)
-    clip: {fileID: 8300000, guid: 34e831a81a9f7cd4d86553ea47413ebf, type: 3}
-    volume: 0.5
-    source: {fileID: 0}
-    loop: 0
-  - name: Coin (paddle)
-    clip: {fileID: 8300000, guid: e65fc77a2b92bab40a84e28e987bb6de, type: 3}
-    volume: 1
-    source: {fileID: 0}
-    loop: 0
-  - name: Coin (sticky)
-    clip: {fileID: 8300000, guid: 2cdad21097667c94a96748c80ccd4488, type: 3}
-    volume: 1
-    source: {fileID: 0}
-    loop: 0
-  - name: Coin (snack)
-    clip: {fileID: 8300000, guid: a540b50bfed44924ea107bc092bb8242, type: 3}
-    volume: 1
-    source: {fileID: 0}
-    loop: 0
-  - name: Coin (dropped)
-    clip: {fileID: 8300000, guid: 93c1211e06c3d8f4ba4d3e7a17ffba6b, type: 3}
-    volume: 1
-    source: {fileID: 0}
-    loop: 0
-  volume: 5
---- !u!4 &769170985
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769170983}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &793906233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6195,6 +6094,112 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088730534}
   m_CullTransparentMesh: 1
+--- !u!1 &2112950273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2112950275}
+  - component: {fileID: 2112950274}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2112950274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112950273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a6102cbd835a14d93b60b6294078b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Menu BGM
+    clip: {fileID: 8300000, guid: 251274b78e60f0f4c9fb998f5c8c1589, type: 3}
+    volume: 0.5
+    source: {fileID: 0}
+    loop: 1
+  - name: Game BGM
+    clip: {fileID: 8300000, guid: e7b45056cca3a0a4fb4b79d6c670d259, type: 3}
+    volume: 0.5
+    source: {fileID: 0}
+    loop: 1
+  - name: End BGM
+    clip: {fileID: 8300000, guid: b12d3c46b2f38c94ba2a468184feacc3, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 1
+  - name: Button Click
+    clip: {fileID: 8300000, guid: 9301365e0d8b58740a27f8dba729e296, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Victory
+    clip: {fileID: 8300000, guid: 55406b6fa21301d44b9983395cce2370, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Defeat
+    clip: {fileID: 8300000, guid: fd67ce3a1e7b02d4eb766e5ab538af24, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Powerup
+    clip: {fileID: 8300000, guid: 215b20eb23c3c5a4f8680170d8bb95dc, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Coin (wall)
+    clip: {fileID: 8300000, guid: 34e831a81a9f7cd4d86553ea47413ebf, type: 3}
+    volume: 0.5
+    source: {fileID: 0}
+    loop: 0
+  - name: Coin (paddle)
+    clip: {fileID: 8300000, guid: e65fc77a2b92bab40a84e28e987bb6de, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Coin (sticky)
+    clip: {fileID: 8300000, guid: 2cdad21097667c94a96748c80ccd4488, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Coin (snack)
+    clip: {fileID: 8300000, guid: a540b50bfed44924ea107bc092bb8242, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Coin (dropped)
+    clip: {fileID: 8300000, guid: 93c1211e06c3d8f4ba4d3e7a17ffba6b, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+  volume: 5
+--- !u!4 &2112950275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112950273}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2138097849
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -23,6 +23,8 @@ public class PaddleController : MonoBehaviour
 
     private void Start()
     {
+        GameManager.instance.isAskingForName = false;
+
         rbM = paddleMain.GetComponent<Rigidbody2D>();
         rbL = paddleLeft.GetComponent<Rigidbody2D>();
         rbR = paddleRight.GetComponent<Rigidbody2D>();
@@ -31,6 +33,9 @@ public class PaddleController : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.instance.isAskingForName)
+            return;
+
         // Horizontal paddle
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {

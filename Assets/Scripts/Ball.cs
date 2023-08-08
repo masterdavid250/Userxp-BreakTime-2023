@@ -78,6 +78,13 @@ public class Ball : MonoBehaviour
 
     public void ResetBall()
     {
+        if (GameManager.instance.Lives <= 0)
+        {
+            Debug.Log("sajfhksjdf");
+            Destroy(this.gameObject);
+            return;
+        }
+
         this.transform.position = new Vector2(-2f, -3.4f);
         this.RB.velocity = Vector2.zero;
         isAttached = true;

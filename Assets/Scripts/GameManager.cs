@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,11 @@ public class GameManager : MonoBehaviour
     public PaddleController paddle { get; private set; }
     public int Lives { get; set; }
     public int Score { get; set; }
+    public string Name { get; set; }
+
+    public List<HighScore> highScores = new List<HighScore>();
+
+    public bool isAskingForName;
 
     [Header("Tutorial Variables")]
     public bool isInTutorial;
@@ -38,17 +44,9 @@ public class GameManager : MonoBehaviour
 
     public void Miss()
     {
-        if (Lives > 0)
-        {
-            Lives--;
-            this.ball.ResetBall();
-            this.paddle.ResetPaddle();
-        }
-
-        else if (Lives <= 0 && !isInTutorial)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+        this.ball.ResetBall();
+        this.paddle.ResetPaddle();
+        Lives--;
     }
 
     public void AddLife()
@@ -59,5 +57,15 @@ public class GameManager : MonoBehaviour
     public void SetLifeTo50()
     {
         Lives = 50;
+    }
+
+    public IEnumerable<HighScore> GetHighScores()
+    {
+        return highScores.OrderByDescending(x => x._score);
+    }
+
+    public void AddScore(HighScore score)
+    {
+        highScores.Add(score);
     }
 }

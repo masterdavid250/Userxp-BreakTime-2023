@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 16484059722629517}
   - component: {fileID: 16484059722629516}
   - component: {fileID: 16484059722629555}
-  - component: {fileID: 16484059722629554}
   m_Layer: 0
   m_Name: Ball
   m_TagString: ball
@@ -144,16 +143,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 08a931511f63632479bca8419cd71eb3, type: 3}
   paddle: {fileID: 0}
   speed: 10
---- !u!114 &16484059722629554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 16484059722629512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 539acb646d654df4389ee7088fad17fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinsText: {fileID: 0}
+  powerups: {fileID: 0}

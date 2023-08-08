@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Borders : MonoBehaviour
 {
+    [SerializeField] GameUI gameUI;
+
     private GameManager gameManager;
 
     private void Start()
@@ -16,6 +18,7 @@ public class Borders : MonoBehaviour
         if (collision.gameObject.CompareTag("ball"))
         {
             FindObjectOfType<AudioManager>().Play("Coin (dropped)");
+            gameUI.AskForName();
             gameManager.Miss();
         }
     }
