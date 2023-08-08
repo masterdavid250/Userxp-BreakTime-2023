@@ -80,7 +80,6 @@ public class Ball : MonoBehaviour
     {
         if (GameManager.instance.Lives <= 0)
         {
-            Debug.Log("sajfhksjdf");
             Destroy(this.gameObject);
             return;
         }
