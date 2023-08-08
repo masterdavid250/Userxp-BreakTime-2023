@@ -6,7 +6,8 @@ public enum PaddleType
 {
     main,
     left,
-    right
+    right,
+    bottom
 }
 // Code is from: https://www.youtube.com/watch?v=RYG8UExRkhA
 public class Paddle : MonoBehaviour
@@ -41,6 +42,13 @@ public class Paddle : MonoBehaviour
             if (thisPaddleType == PaddleType.main)
             {
                 direction = Vector2.up;
+                offset = paddlePosition.x - contactPoint.x;
+                maxOffset = collision.otherCollider.bounds.size.x / 2;
+            }
+
+            if (thisPaddleType == PaddleType.bottom)
+            {
+                direction = Vector2.down;
                 offset = paddlePosition.x - contactPoint.x;
                 maxOffset = collision.otherCollider.bounds.size.x / 2;
             }

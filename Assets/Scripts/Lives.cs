@@ -12,7 +12,6 @@ public class Lives : MonoBehaviour
     void Start()
     {
         gameManager = GameManager.instance;
-
         gameManager.Lives = 1;
     }
 

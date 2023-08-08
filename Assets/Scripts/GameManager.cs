@@ -8,15 +8,13 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public Ball ball { get; private set; }
     public PaddleController paddle { get; private set; }
-    public int Lives {get; set; }
+    public int Lives { get; set; }
     public int Score { get; set; }
 
     [Header("Tutorial Variables")]
     public bool isInTutorial;
     public bool isTutorialPowerupDone;
     public int currentTutorialPowerup;
-
-    private int score;
 
     void Awake()
     {
@@ -50,20 +48,12 @@ public class GameManager : MonoBehaviour
         else if (Lives <= 0 && !isInTutorial)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
+        }
     }
 
     public void AddLife()
     {
-        if (!isInTutorial)
-        {
-            Lives++;
-        }
-
-        else
-        {
-            Lives = 50;
-        }
+        Lives++;
     }
 
     public void SetLifeTo50()

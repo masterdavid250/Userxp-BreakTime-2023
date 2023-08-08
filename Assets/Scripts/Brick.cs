@@ -25,11 +25,8 @@ public class Brick : MonoBehaviour
         if (health <= 0)
         {
             gameManager.Score += points;
-
             if (snackName == bonusSnack.snackName)
-            gameManager.AddLife();
-
-            // Might change this so that the snack falls before being destroyed
+                gameManager.AddLife();
             Destroy(gameObject);
         }
     }
@@ -39,18 +36,13 @@ public class Brick : MonoBehaviour
         if (collision.gameObject.CompareTag("ball"))
         {
             health -= ball.ballDamage;
-
-            // if (spriteCount < snackSprites.Length - 1 && snackSprites.Length != 0)
             if (health > 0 && snackSprites.Length != 0)
             {
                 spriteCount++;
                 this.GetComponent<SpriteRenderer>().sprite = snackSprites[spriteCount];
             }
-
             else if (health <= 0 && snackSprites.Length != 0)
-            {
                 this.GetComponent<SpriteRenderer>().sprite = snackSprites[snackSprites.Length - 1];
-            }
         }
     }
 }

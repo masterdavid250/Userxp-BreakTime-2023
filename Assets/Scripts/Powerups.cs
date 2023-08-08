@@ -26,28 +26,31 @@ public class Powerups : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Z))
+        if (gameManager.Lives > 1)
         {
-            FindObjectOfType<AudioManager>().Play("Powerup");
-            BiggerPaddlePowerup();
-        }
+            if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Z))
+            {
+                FindObjectOfType<AudioManager>().Play("Powerup");
+                BiggerPaddlePowerup();
+            }
 
-        else if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.X))
-        {
-            FindObjectOfType<AudioManager>().Play("Powerup");
-            CurrencyChange();
-        }
+            else if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.X))
+            {
+                FindObjectOfType<AudioManager>().Play("Powerup");
+                CurrencyChange();
+            }
 
-        else if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.C))
-        {
-            FindObjectOfType<AudioManager>().Play("Powerup");
-            StickyPaddle();
+            else if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.C))
+            {
+                FindObjectOfType<AudioManager>().Play("Powerup");
+                StickyPaddle();
+            }
         }
     }
 
     public void BiggerPaddlePowerup()
     {
-        if (gameManager.Lives > 1 && !isBiggerPaddlesActivated)
+        if (!isBiggerPaddlesActivated)
         {
             gameManager.Lives -= 2; 
             isBiggerPaddlesActivated = true;
@@ -68,7 +71,7 @@ public class Powerups : MonoBehaviour
 
     public void CurrencyChange()
     {
-        if (gameManager.Lives > 1 && !isCurrencyChangeActivated)
+        if (!isCurrencyChangeActivated)
         {
             gameManager.Lives -= 2;
             isCurrencyChangeActivated = true;
@@ -84,7 +87,7 @@ public class Powerups : MonoBehaviour
 
     public void StickyPaddle()
     {
-        if (gameManager.Lives > 1 && !isStickyPaddlesActivated)
+        if (!isStickyPaddlesActivated)
         {
             // Other part of code for this is in the ball script
             gameManager.Lives -=2;

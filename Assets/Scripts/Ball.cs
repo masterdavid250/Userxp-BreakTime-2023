@@ -14,7 +14,14 @@ public class Ball : MonoBehaviour
     public Rigidbody2D RB { get; private set; }
 
     private bool isAttached;
+    
+    private bool isSticked = false;
+    private Transform stickyPaddle = null;
+    private Vector3 offset;
+
     private CircleCollider2D circleCollider;
+
+    private Vector2 contactPoint; 
 
     private void Awake()
     {
@@ -36,12 +43,23 @@ public class Ball : MonoBehaviour
         if (isAttached)
         {
             Vector2 target = new Vector2(paddle.position.x, transform.position.y);
-
             transform.position = target;
-
             if (Input.GetKey(KeyCode.Space))
             {
                 Launch();
+            }
+        }
+
+        if (isSticked)
+        {
+            transform.position = stickyPaddle.position + offset;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                isSticked = false;
+                stickyPaddle = null;
+                offset = Vector3.zero;
+                RB.velocity = Vector2.zero;
+                RB.AddForce(Vector2.up * 300f);
             }
         }
     }
@@ -55,21 +73,12 @@ public class Ball : MonoBehaviour
     {
         Vector2 force = Vector2.up;
         RB.AddForce(force.normalized * speed);
-
         isAttached = false;
     }
 
     public void ResetBall()
     {
         this.transform.position = new Vector2(-2f, -3.4f);
-        this.RB.velocity = Vector2.zero;
-
-        isAttached = true;
-    }
-
-    // for sticky paddle implementation
-    public void StopAtCurrentPosition()
-    {
         this.RB.velocity = Vector2.zero;
         isAttached = true;
     }
@@ -86,7 +95,9 @@ public class Ball : MonoBehaviour
         if (powerups.isStickyPaddlesActivated && collision.gameObject.name == "Paddle1" && !isAttached)
         {
             FindObjectOfType<AudioManager>().Play("Coin (sticky)");
-            StopAtCurrentPosition();
+            isSticked = true;
+            stickyPaddle = collision.transform;
+            offset = transform.position - stickyPaddle.position;
         }
         else if (collision.gameObject.tag == "Paddle")
         {
