@@ -422,6 +422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   previousScreen: {fileID: 1749020822}
+  currentLevelScreen: {fileID: 0}
 --- !u!1 &153706786
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   previousScreen: {fileID: 1749020822}
+  currentLevelScreen: {fileID: 0}
 --- !u!1 &254596754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,6 +1123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   previousScreen: {fileID: 1749020822}
+  currentLevelScreen: {fileID: 0}
 --- !u!114 &483251713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1751,6 +1754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   previousScreen: {fileID: 1749020822}
+  currentLevelScreen: {fileID: 0}
 --- !u!114 &686648344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3640,6 +3644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   previousScreen: {fileID: 442345031}
+  currentLevelScreen: {fileID: 442345031}
 --- !u!1 &1777675532
 GameObject:
   m_ObjectHideFlags: 0

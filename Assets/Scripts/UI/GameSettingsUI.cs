@@ -8,6 +8,7 @@ public class GameSettingsUI : MonoBehaviour
 
     public void ButtonSettings()
     {
+        Time.timeScale = 0;
         gameObject.SetActive(false);
         settings.SetActive(true);
         FindObjectOfType<AudioManager>().Play("Button Click");
