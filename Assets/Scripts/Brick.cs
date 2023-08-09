@@ -35,7 +35,7 @@ public class Brick : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ball"))
         {
-            health -= ball.ballDamage;
+            health -= collision.gameObject.GetComponent<Ball>().ballDamage;
             if (health > 0 && snackSprites.Length != 0)
             {
                 spriteCount++;

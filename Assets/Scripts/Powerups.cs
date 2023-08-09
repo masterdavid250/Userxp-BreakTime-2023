@@ -113,9 +113,9 @@ public class Powerups : MonoBehaviour
         isBiggerPaddlesActivated = false;
         powerupLights[0].GetComponent<Image>().sprite = lightSprites[0];
         
-        // for tutorial
-        gameManager.isTutorialPowerupDone = true;
-        gameManager.currentTutorialPowerup = 1;
+        // // for tutorial
+        // gameManager.isTutorialPowerupDone = true;
+        // gameManager.currentTutorialPowerup = 1;
     }
 
     private void ReturnCurrencyToNormal() 
@@ -126,9 +126,9 @@ public class Powerups : MonoBehaviour
         ball.UpdateColliderSize();
         powerupLights[1].GetComponent<Image>().sprite = lightSprites[0];
         
-        // for tutorial
-        gameManager.isTutorialPowerupDone = true;
-        gameManager.currentTutorialPowerup = 2;
+        // // for tutorial
+        // gameManager.isTutorialPowerupDone = true;
+        // gameManager.currentTutorialPowerup = 2;
     }
 
     private void ReturnStickyPaddleToNormal() 
@@ -137,8 +137,8 @@ public class Powerups : MonoBehaviour
         isStickyPaddlesActivated = false;
         powerupLights[2].GetComponent<Image>().sprite = lightSprites[0];
 
-        // for tutorial
-        gameManager.isTutorialPowerupDone = true;
-        gameManager.currentTutorialPowerup = 3;
+        // // for tutorial
+        // gameManager.isTutorialPowerupDone = true;
+        // gameManager.currentTutorialPowerup = 3;
     }
 }

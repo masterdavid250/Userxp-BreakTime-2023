@@ -33,6 +33,12 @@ public class EndScreenUI : MonoBehaviour
     public void RetryButton()
     {
         FindObjectOfType<AudioManager>().Play("Button Click");
+        SceneManager.LoadScene(1);
+    }
+
+    public void MenuButton()
+    {
+        FindObjectOfType<AudioManager>().Play("Button Click");
         SceneManager.LoadScene(0);
     }
 

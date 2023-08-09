@@ -18,7 +18,11 @@ public class Borders : MonoBehaviour
         if (collision.gameObject.CompareTag("ball"))
         {
             FindObjectOfType<AudioManager>().Play("Coin (dropped)");
-            gameUI.AskForName();
+            if (SceneManager.GetActiveScene().name == "1_MainGame")
+            {
+                gameUI.AskForName();
+            }
+
             gameManager.Miss();
         }
     }
