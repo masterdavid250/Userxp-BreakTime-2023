@@ -26,7 +26,10 @@ public class Brick : MonoBehaviour
         {
             gameManager.Score += points;
             if (snackName == bonusSnack.snackName)
+            {
                 gameManager.AddLife();
+                bonusSnack.ReplaceAndRandomizeBonus();
+            }
             Destroy(gameObject);
         }
     }

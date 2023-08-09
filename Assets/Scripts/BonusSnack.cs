@@ -7,7 +7,8 @@ public class BonusSnack : MonoBehaviour
 {
     public GameObject[] snacks;
     public Sprite[] snackTextSprites;
-    public GameObject bonusBoxText; 
+    public GameObject bonusBoxText;
+    public GameObject spawnedBonusSnack; 
     private SpriteRenderer textSpriteRenderer;
     public Transform snackPosition;
     private int snackNumber;
@@ -29,14 +30,21 @@ public class BonusSnack : MonoBehaviour
         }
     }
 
-    private void SpawnSnack(int snackInt, string snackTitle)
+    public void SpawnSnack(int snackInt, string snackTitle)
     {
         if (snackNumber == snackInt && !bonusSpawned)
         {
-            Instantiate(snacks[snackInt], snackPosition.position, snackPosition.rotation);
+            spawnedBonusSnack = Instantiate(snacks[snackInt], snackPosition.position, snackPosition.rotation);
             snackName = snackTitle;
             textSpriteRenderer.sprite = snackTextSprites[snackInt];
             bonusSpawned = true;
         }
+    }
+
+    public void ReplaceAndRandomizeBonus()
+    {
+        Destroy(spawnedBonusSnack);
+        bonusSpawned = false;
+        snackNumber = Random.Range(0, snacks.Length);
     }
 }

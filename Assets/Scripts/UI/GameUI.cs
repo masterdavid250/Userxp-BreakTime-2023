@@ -10,7 +10,6 @@ public class GameUI : MonoBehaviour
     private void Start()
     {
         nameBox.SetActive(false);
-
         nameInput.onEndEdit.AddListener(SubmitName);
     }
 
