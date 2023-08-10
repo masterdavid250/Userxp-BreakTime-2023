@@ -7531,6 +7531,7 @@ MonoBehaviour:
   - {fileID: 3196418731129777683, guid: cf9bba48ae7dd2748b8491938cbde999, type: 3}
   - {fileID: 947173718540348099, guid: d8b271efcc2dc73478934a32ceec8618, type: 3}
   snackStackSpawnLocation: {fileID: 1632358875}
+  ball: {fileID: 1736769056}
 --- !u!1 &1523458553
 GameObject:
   m_ObjectHideFlags: 0
@@ -8409,6 +8410,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c28140dec49ea144eaf2596fe7ce5b6f, type: 3}
   - {fileID: 21300000, guid: 733fba0ea264e9749b6a90c7dda43e59, type: 3}
   bonusBoxText: {fileID: 75519287}
+  spawnedBonusSnack: {fileID: 0}
   snackPosition: {fileID: 498628519}
   snackName: 
 --- !u!1001 &1849399531

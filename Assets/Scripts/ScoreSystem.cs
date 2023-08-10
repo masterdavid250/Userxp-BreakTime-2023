@@ -11,6 +11,7 @@ public class ScoreSystem : MonoBehaviour
     public Transform        snackStackSpawnLocation;
     private GameManager     gameManager;
     private GameObject[]    allSnacks;
+    public Ball ball;
 
     private void Start()
     {
@@ -35,5 +36,6 @@ public class ScoreSystem : MonoBehaviour
     {
         GameObject newStack = Instantiate(snackStack[Random.Range(0, snackStack.Length)], snackStackSpawnLocation.position, snackStackSpawnLocation.rotation);
         newStack.SetActive(true); 
+        ball.speed *= 1.1f;
     }
 }

@@ -5,10 +5,10 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public int ballDamage = 1; 
+    public float speed = 10f;
     public SpriteRenderer spriteRenderer;
     public Sprite[] ballSprites;
     [SerializeField] private Transform paddle;
-    [SerializeField] private float speed = 10f;
     [SerializeField] private Powerups powerups;
 
     public Rigidbody2D RB { get; private set; }
